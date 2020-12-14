@@ -1,0 +1,495 @@
+// icons
+.icon
+    background-color: brand1
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50px
+    height: 50px
+    padding:0.3em
+    font-size: 1.9em
+    border-radius: 50%
+.icon.alt
+    background-color: brand2
+.ic-basic
+    font-size: 2.2em
+    line-height: 1.8em
+    color: brand1
+.ic-basic::before
+    color: brand1
+.ic-basic.rev
+    color: white
+.ic-basic.rev::before
+    color: white
+ul.iconRow,
+ul.iconRow li
+    list-style-type: none
+ul.iconRow li
+    margin: marXXS marStd 0 0
+    padding: padXXS padStd padXXS 0 
+    display: inline-block
+    border-right:1px solid brand1
+ul.iconRow li:last-child
+    border-right:none
+ul.iconRow li i 
+    font-size: 2em
+div.socialLinks
+    display: flex
+    justify-content: center
+div.socialLinks a
+    font-size: 2.5em
+    padding: padStd
+    flex-basis: 20%
+
+main div.socialLinks
+    justify-content:flex-start
+main div.socialLinks a
+    font-size: 2em
+    padding: padStd
+    padding-left:0
+    padding-top:0
+    flex-basis: auto
+@media phoneRule 
+    main div.socialLinks a
+        margin-right: marStd*2
+
+#navMobile .icon,
+#navHeader .icon
+    background: none
+body > footer .icon
+    display: inline-flex
+    // background-color: blackAlp10
+    font-size: 1.4em
+    width:40px
+    height: 40px
+    margin-right: 1px
+    margin-bottom: 10px
+    justify-content: flex-start
+    background: none
+    padding: 0
+// ctas
+a.majorCTA,
+a.ctaButton
+    color: white
+    background-color: brand3
+    padding: padXXS padXS padXXS padXS
+    margin-bottom: 7px
+    display: inline-block
+    white-space: nowrap
+    border-radius: 2em
+    font-size: 0.8em
+    font-weight: 500
+div#masthead a.majorCTA
+    color: white !important
+a.ctaButton
+    border-radius: 0
+    background: none
+    color: brand1
+    font-size: 1em
+    font-weight:700
+    border-bottom: 2px solid brand1
+    padding-left: 5px
+    padding-right: 5px
+    margin-right:marXXS
+    display: inline-flex
+    justify-content: space-between
+    transition: 0.2s
+    white-space: normal
+
+a.ctaButton i
+    margin-left:15px 
+    margin-right:10px;
+    transition: 0.2s 
+a.ctaButton i:before
+    color: brand1
+a.ctaButton:hover,
+a.ctaButton:hover > i:before
+    color: brand2
+    border-color: brand2
+    transition: 0.2s 
+a.ctaButton:hover i
+    margin-left:25px; 
+    margin-right:0px; 
+    transition: 0.5s 
+#priNav a.majorCTA
+    text-shadow: 0px 1px 2px halfDark    
+    box-shadow: 0px 2px 2px black
+div.cta > div
+    text-align: center
+div.cta > div > h6
+    margin-bottom: 0
+
+@media phoneRule
+    a.majorCTA
+        font-size:1.1em
+        font-weight: 800
+        padding: padM padXL padM padXL  
+    a.ctaButton
+        padding-top: padM
+        padding-bottom: padM
+
+// logos
+.mLogo img
+    height: 5.2vh 
+#priNav-v2 a.logo-small img,
+#priNav a.logo-small img
+    display: block
+    width: 60px
+    height: auto
+    margin-bottom: marXXS
+body > footer img.logo
+    width: 15vw
+.inpage-logo
+    display: block
+    width: 50vw
+    height: auto 
+.inpage-logo-stacked
+    display: block
+    width: 50vw
+    height: auto      
+@media ttrigger    
+    body > footer img.logo
+        width: 5vw
+    .inpage-logo
+        width: 30vw
+    .inpage-logo-stacked
+        width: 30vw    
+@media dtrigger    
+    .inpage-logo
+        width: 25vw
+    .inpage-logo-stacked
+        width: 10vw
+
+
+.grid-clients
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr))
+  grid-gap: 5px
+
+.grid-clients > div
+  padding: 1vw
+  display: grid
+  place-items: center
+  border:1px solid blackAlp10
+
+.grid-clients > div::before
+  content: ""
+  display: block
+  padding-bottom: 100%
+  grid-area: 1 / 1 / 2 / 2
+
+.grid-clients > div img
+  width: 100%
+  grid-area: 1 / 1 / 2 / 2
+
+
+
+// misc
+i.block
+    display: inline-block
+    font-size:1em
+    line-height: 100%
+    font-weight: 900
+.faded
+    opacity:0.4   
+    transition: 0.3s 
+.rotateIC
+    transition: 0.2s
+    transform: rotate(180deg) 
+.brand1
+    color: brand1
+.brand2
+    color: brand2
+
+
+// video
+.pbVideo
+    position: relative
+    padding-bottom: 56.25%
+    padding-top: 0
+    height: 0
+.pbVideo iframe 
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+div.video
+    position: relative
+div.video > div
+    width: 100%
+    height: 100%  
+.hidden-xs
+    display: none
+div.vidHolder
+    position: absolute
+    top: 0
+    left: 0px
+    width: 100%
+    height: 100%
+    overflow: hidden
+video.hidden-xs
+    width: 100%
+    height: 100%
+    object-fit: cover
+@media dtrigger
+    video.hidden-xs
+        width: 100%
+        height: 100%
+@media dtrigger
+    .hidden-xs
+        display: block
+       
+
+
+// images
+img 
+    width: 100%
+    height: auto
+    display: block
+img.med
+    width: 75%
+    margin: 0px auto
+
+
+
+// caption and quote styling
+p.figureCap
+    width: auto
+    border-left: 2px solid brand1
+    padding: padXS padL padM padM
+    margin-left: marL*2 
+    position relative   
+    margin-bottom: marL
+p.quote::before
+    position: absolute
+    content: '\201C'
+    left: - + marXS*2.2
+    font-weight: 1000
+    font-size: 70px
+    display: flex
+    align-items: flex-end
+    height: 40px
+    line-height: 15px
+@media phoneRule
+    p.figureCap
+        font-size: 0.8em
+    p.quote::before
+        left: -40px
+        font-size: 60px
+        height: 35px
+@media tabletRule
+    p.figureCap
+        width: auto
+    p.quote::before
+        left: -50px
+@media dtrigger
+    p.figureCap
+        width: 40vw
+        padding: padXXS padXS
+        margin-left: marXS*2 
+        margin-bottom: marL
+    p.quote::before
+        left: -50px
+
+
+
+// slider
+div.slider
+    //border: 1px solid red
+    overflow: hidden
+    background-color: brand1
+
+
+
+// inpage nav for desktop
+.inpgNv
+    text-align: right 
+@media phoneRule
+    .inpgNv .inpgNvTop
+        display: none
+
+
+
+// infographics
+.gridBoxes 
+    display: grid
+    justify-content: center
+    align-content: center
+    grid-template-columns: repeat(2, 27vmin)
+    grid-template-rows: repeat(3, 20vmin)
+    grid-gap: 1px
+.gridBoxes > *
+    background-blend-mode: multiply
+    background: linear-gradient(to bottom left, rgba(180,0,0,0.8),rgba(180,0,0,1), rgba(190,0,0,0.8), rgba(200,0,0,0.8))        
+    padding: 1.2em
+.gridBoxes > * > *
+    margin: 0.1em
+
+@media phoneRule 
+    article.bythenumbers *.picturefill-background
+        height: auto
+    article.bythenumbers div.content
+        flex-direction: column    
+    .gridBoxes
+        display: block
+    .gridBoxes br
+        display: none
+
+div.infographic
+    position: relative
+div.ig-whatisomni
+    margin-top: 0
+    margin-bottom: marL
+
+div.ig-whatisomni div.igContent
+    display: flex
+    flex:1 1 auto
+    justify-content: flex-start
+    align-items: stretch
+    flex-wrap: nowrap
+    @media phoneRule
+        flex-direction: column
+
+div.ig-whatisomni div.igContent
+    background-color: #fefefe
+ 
+div.ig-whatisomni div.igItem
+    padding: padXS padStd
+    border-left:1px solid #dedede
+    border-bottom:1px solid #dedede
+    display: flex
+    flex:1 1 auto
+    justify-content: flex-start
+    align-items: flex-start
+    flex-wrap: wrap
+    flex-basis: 20%
+    @media phoneRule 
+        padding: padL padXL
+        border-left: none
+div.ig-whatisomni div.igItem:last-child 
+    border-right:1px solid #cccccc
+    @media phoneRule 
+        border-right: none
+@media phoneRule 
+   div.ig-whatisomni div.igItem hr
+        display: none
+
+
+div.ig-whatisomni div.igItem > div
+    padding: padXXS
+div.ig-whatisomni div.igItem > div > *
+    margin: 0
+    line-height: 1.3em
+    margin-bottom: marXXS
+div.ig-whatisomni div.igItem h5
+    padding-bottom: 0
+    margin-bottom: 0
+div.ig-whatisomni div.igItem.orange h5
+    color: #d8481b
+div.ig-whatisomni div.igItem.yellow h5
+    color: #eb9626   
+
+@media phoneRule 
+    div.ig-whatisomni div.igItem h5 > br
+        display: none
+    div.ig-whatisomni div.igItem p
+        margin: marXXS 0
+
+
+@media dtrigger
+    div.ig-whatisomni div.igItem
+        flex-direction: column
+    div.ig-whatisomni div.igItem > div
+        padding-left: 0
+        padding-bottom: 0
+    div.ig-whatisomni div.igItem > div > *:not(p)
+       margin-right: 10px;
+
+
+
+/* inView effects */
+@media dtrigger
+    .greyToColor.onOff .stateInactive
+        background-color: blackAlp50 !important
+        filter:grayscale(100%)
+        transition: 1s
+    .greyToColor.onOff .stateActive
+        background-color: blackAlp10 !important
+        filter:grayscale(0%)
+        transition: 2.5s    
+
+
+
+/* app store links */
+span.storeLinks 
+    display: block
+span.storeLinks a, 
+span.storeLinks a img
+    display: block
+    max-width:150px
+    max-height:40px
+span.storeLinks a
+    display: inline-block
+
+
+/* simple list */
+ul.featureList li
+    list-style-type: none
+    line-height:1.5em
+    margin-bottom: 0.75em
+ul.featureList li strong
+    display: inline-block
+    min-width:12%
+
+/* form */
+#contact label 
+    display: block
+    line-height: 2em
+    margin-bottom: 0.3em
+#contact input,
+#contact textarea 
+    width: 90%
+    padding:2%;
+    margin-bottom: 1em
+#contact input[type=submit]
+    width: auto
+    padding-left: padStd
+    padding-right: padStd
+
+/* Contact form defaults */
+#contact #inputContainer #loadingText,
+#contact #inputContainer #errorText,
+#contact #inputContainer #doneText
+    display: none
+
+
+/* Contact form loading */
+#contact #inputContainer.loading #loadingText
+    display: block
+
+#contact #inputContainer.loading #submit,
+#contact #inputContainer.loading #errorText,
+#contact #inputContainer.loading #doneText
+    display: none
+
+/* Contact form error */
+#contact #inputContainer.error #errorText 
+    display: block
+
+#contact #inputContainer.error #submit,
+#contact #inputContainer.error #loadingText,
+#contact #inputContainer.error #doneText 
+    display: none
+
+
+/* Contact form done */
+#contact #inputContainer.done #doneText
+    display: block
+
+#contact #inputContainer.done #submit,
+#contact #inputContainer.done #loadingText,
+#contact #inputContainer.done #errorText 
+    display: none
+

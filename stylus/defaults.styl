@@ -1,0 +1,156 @@
+/*!
+*
+*
+*
+*
+* start custom stylesheets
+*
+*
+*
+*
+*
+*/
+
+
+// vars
+brand1 = rgba(51,51,51,1.0) //#333333
+brand2 = rgba(255,0,0, 1.0) //#ff0000
+brand3 = rgba(47,205,21, 1.0) //#2fcd15
+
+white = rgba(255,255,255,1.0)
+whiteAlp90 = rgba(255,255,255,0.9)
+whiteAlp75 = rgba(255,255,255,0.75)
+whiteAlp50 = rgba(255,255,255,0.5)
+whiteAlp25 = rgba(255,255,255,0.25)
+whiteAlp10 = rgba(255,255,255,0.1)
+whiteAlp05 = rgba(255,255,255,0.05)
+
+black = rgba(0,0,0,1.0)
+blackAlp75 = rgba(0,0,0,0.75)
+blackAlp55 = rgba(0,0,0,0.55)
+blackAlp50 = rgba(0,0,0,0.5)
+blackAlp25 = rgba(0,0,0,0.25)
+blackAlp10 = rgba(0,0,0,0.1)
+blackAlp5 = rgba(0,0,0,0.05)
+
+halfDark = rgba(0,0,0,0.45)
+
+
+lightGrey = rgba(222,222,222,1.0)
+mainBG = rgba(245,245,245,1.0)
+
+padXL = 7vw
+padL = 5vw
+padM = 3vw
+padStd = 1.8vw
+padXS = 1.5vw
+padXXS = 0.8vw
+
+marXL = 10vw
+marL = 5vw
+marM = 3vw
+marStd = 1.8vw
+marXS = 1.5vw
+marXXS = 0.8vw
+
+
+
+fontStack = -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+//responsive breakpoint & media queries
+mBreakPoint = 750px
+tBreakPoint = 1100px
+sdBreakPoint = 1200px
+dBreakPoint = 1500px
+lgBreakPoint = 1900px
+
+phoneRule = "screen and (max-width: mBreakPoint )"
+tabletRule = "screen and (min-width: mBreakPoint) and (max-width: tBreakPoint )"
+desktopRule = "screen and (min-width: tBreakPoint) and (max-width: dBreakPoint )"
+lgdesktopRule = "screen and (min-width: dBreakPoint)"
+
+smallDesktop = "screen and (min-width: mBreakPoint) and (max-width: sdBreakPoint )"
+
+
+mtrigger = "screen and (max-width: tBreakPoint )"
+ttrigger = "screen and (min-width: mBreakPoint )"
+dtrigger = "screen and (min-width: tBreakPoint )"
+
+phLandscape = "screen and (max-width: mBreakPoint) and (orientation: landscape)"
+tbLandscape = "screen and (min-width: mBreakPoint) and (max-width: tBreakPoint) and (orientation: landscape)"
+
+ie = "all and (-ms-high-contrast: none), (-ms-high-contrast: active)"
+
+$hideItAll = none !important
+
+// responsive logos
+logoDimens = 40vw
+
+
+// misc blocks
+marginNo = @block {
+    margin: 0
+}
+marginM = @block {
+    margin-bottom: 2vh
+}
+marginL = @block {
+    margin-left: 2vw
+}
+marginR = @block {
+    margin-right: 2vw
+}
+marginT = @block {
+    margin-bottom: 4vh
+}
+marginBT = @block {
+    margin-bottom: 1.5vh
+}
+marginVT = @block {
+    margin-top: 2vh
+    margin-bottom: 2vh
+}
+marginALL = @block {
+    margin: 2vh
+}
+wh100 = @block {
+    width:100%
+    height:100%
+}
+test = @block {
+    border:1px solid cyan
+}
+borderBtm = @block {
+    border-bottom: 1px solid brand1
+}
+
+// heights
+fullH = 85vh
+largeH = 70vh
+halfH = 50vh
+smallH = 25vh
+
+navHeight = 6vh
+navHeightL = 15vh
+navSpacer = 10vh
+navSpacerL = 15vh
+
+
+
+// basic defaults
+html, body
+    width: 100%
+    height: 100%
+    font-family: 'Manrope VF', Manrope, fontStack
+body
+    background-color: white
+    color: brand1
+    font-size: 16px
+    // background: linear-gradient(top, white, brand1)
+hr
+    border: none
+    border-bottom: 1px solid brand1
+
+.noPad
+    padding: 0 !important
+// blend modes

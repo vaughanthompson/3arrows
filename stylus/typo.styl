@@ -1,0 +1,204 @@
+// typo defaults
+a:link, a:visited
+    color: brand1
+    text-decoration: none
+p a:link,
+p a:visited,
+li a:link,
+li a:visited
+    text-decoration: underline
+
+
+// custom typo
+ul
+    margin-bottom: 2em
+    padding-left: 1em
+
+ul li
+    font-size: 1em
+    line-height: 1.4em
+    margin-bottom: 0.4em
+    list-style-type: circle
+
+// picturefill-bg and image teaser
+*.picturefill-background,
+*.picturefill-background a
+    color: white 
+@media ttrigger
+    *.picturefill-background.lighten1,
+    *.picturefill-background.lighten1 a,
+    *.picturefill-background.lighten2,
+    *.picturefill-background.lighten2 a
+    *.picturefill-background.darktext,
+    *.picturefill-background.darktext a
+        color: black          
+*.picturefill-background a
+    text-decoration: underline
+
+
+
+.activeLink, 
+.activeLang, 
+nav a:hover,
+p a:hover,
+li a:hover,
+*.picturefill-background a:hover
+    color: brand2 !important
+    transition: 500ms
+.activeLink,
+nav a:hover
+    border-bottom-color: brand2 !important
+
+
+// nav typo
+div#masthead a:link,
+div#masthead a:visited
+    color: whiteAlp75
+div#priNav-v2 a.logo-small h2,
+div#priNav a.logo-small h2
+    font-size: 0.5em
+    line-height: 1.3em
+    text-transform: uppercase
+    color: grey
+    font-weight: 400
+    letter-spacing: 0.07em
+    margin-bottom: 0
+div#priNav h5
+    font-size: 1em
+    font-weight: 600
+    letter-spacing: 0
+    margin-bottom: 7px
+div#priNav-v2 h5
+    font-size: 0.95em
+    font-weight: 500
+    letter-spacing: 0
+    margin-bottom: 7px    
+div#priNav a#omniDrop h5
+    display: flex
+    justify-content: space-between    
+div#priNav h6,
+div#slideNav h6
+    font-size: 0.7em
+    line-height: 1.3em
+    letter-spacing: 0.02em
+    margin-bottom: 0
+div#secNav nav a
+    font-weight: 500
+    font-size:0.8em
+    line-height: 100%
+    padding:0
+div.langNav a
+    text-transform: uppercase
+div.langNav a:hover
+    cursor pointer    
+div.langNav a.activeLang
+     font-weight: 800 !important
+div#slideNav nav h6
+    font-size: 0.9em
+    font-weight: 700
+    color: white
+div#slideNav nav a
+    font-weight: 500
+    font-size:0.9em   
+
+h1, h2, h3, h4 ,h5, h6
+    margin: 0
+    margin-bottom: marXXS
+
+// defaults   
+h1
+    font-weight: 800
+    font-size: 3.5em
+    line-height: 105%
+    letter-spacing: -0.05em
+h1 span
+    font-weight: 300
+    letter-spacing: -0.02em    
+h2
+    font-weight: 1000
+    font-size: 2.7em
+    line-height: 115%
+    letter-spacing: -0.035em
+h2 span
+    font-weight: 300
+    letter-spacing: -0.015em    
+h3
+    font-weight: 550
+    font-size: 2.3em
+    line-height: 115%
+    letter-spacing: -0.035em
+h3 span
+    font-weight: 300
+    letter-spacing: -0.01em    
+h4
+    font-weight: 600
+    font-size: 1.7em
+    line-height: 120%
+    letter-spacing: -0.01em
+h4 span
+    font-weight: 400    
+h5
+    font-weight: 700
+    font-size: 1.3em
+    line-height: 125%
+    letter-spacing: -0.02em
+h5 span
+    font-weight: 400
+    letter-spacing: -0.01em      
+h6
+    font-weight: 500
+    font-size:1.2em
+    line-height: 130%
+    letter-spacing: -0.015em
+p
+    font-size: 1em
+    line-height: 140%
+strong 
+    font-weight: 800
+    letter-spacing: -0.015em
+
+// modify typo
+.small
+    font-size: 0.7em    
+
+
+
+// footer
+body > footer p a
+    font-size:1em
+    line-height: 160%    
+body > footer h6
+    font-weight: 700
+    font-size:1em
+    line-height: 120%
+    color: brand2
+
+
+@media mtrigger
+    h1
+        font-size: 1.8em   
+        line-height: 110%
+    *.picturefill-background h1
+        font-size: 2.2em   
+        line-height: 110%    
+    h2
+        font-size: 1.8em
+        line-height: 110%
+    h3
+        font-size: 1.8em
+        line-height: 110%
+    h4
+        font-size: 1.6em
+        line-height: 110%
+    h5
+        font-size: 1.2em
+        line-height: 110%
+    h6
+        font-size: 1.1em
+        line-height: 110%
+
+    p
+        font-size: 1em
+    h1, h2, h3, h4, h5, h6, p
+        margin-bottom: 0.5em;
+
