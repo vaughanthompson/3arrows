@@ -1,22 +1,6 @@
 ﻿$(document).ready(function(){
 
-    // sitewide and activeLinking
-    var str = window.location.pathname;
-    if (str.indexOf('/en/') >= 0) {
-        $('div.containMNav').load("inc-mobNavEN.html");
-        $('div#masthead').load("inc-topNavEN.html");
-        $('footer#siteWide').load("inc-footerEN.html");
-    } else if (str.indexOf('/de/') >= 0) {
-        $('div.containMNav').load("inc-mobNavDE.html");
-        $('div#masthead').load("inc-topNavDE.html");
-        $('footer#siteWide').load("inc-footerDE.html");
-    } else {
-        $('div.containMNav').load("/en/inc-mobNavEN.html");
-        $('div#masthead').load("/en/inc-topNavEN.html");
-        $('footer#siteWide').load("/en/inc-footerEN.html");
-    }
 
-  
 
 
 

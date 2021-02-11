@@ -126,9 +126,14 @@ main {
   background-color: rgba(0,0,0,0.5);
 }
 body footer {
-  border-top: 1px solid #dedede;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  background-color: rgba(0,0,0,0.25);
 }
 @media screen and (min-width: 750px) {
+  main {
+    padding-top: 0;
+    padding-bottom: 5vw;
+  }
   main,
   div#priNav-v2,
   div#priNav,
@@ -139,7 +144,6 @@ body footer {
     padding-left: 5vw;
     padding-right: 5vw;
   }
-  main,
   body footer {
     padding-top: 3vw;
     padding-bottom: 5vw;
@@ -245,12 +249,6 @@ article.grid.side-by-side section > div:last-child {
 }
 article > header {
   padding: 3vw;
-}
-main > * {
-  margin-top: 3vw;
-}
-main > *:first-child {
-  margin-top: 0;
 }
 *.centerMe div.content {
   text-align: center;
@@ -1584,6 +1582,473 @@ body > footer h6 {
   h6,
   p {
     margin-bottom: 0.5em;
+  }
+}
+div#gameboard {
+  display: inline-block;
+  position: relative;
+  margin: 0px auto;
+  border: 2px solid rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+  border-radius: 12px;
+  padding: 0.8vw;
+}
+div#gameboard div.fluff {
+  border-style: double;
+  border-color: rgba(255,255,255,0.25);
+  border-width: 3px;
+  border-radius: 8px;
+  padding: 0.8vw;
+}
+div#gameboard div.container {
+  height: 75vh;
+  width: 75vh;
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 0;
+  -o-box-align: stretch;
+  align-items: stretch;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgba(255,255,255,0.5);
+}
+div#gameboard.g6x6 div.container {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+div#gameboard.g8x8 div.container {
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+div#gameboard div.container > div.item {
+  position: relative;
+  border: 1px solid;
+  border-right: none;
+  border-bottom: none;
+  border-color: rgba(255,255,255,0.5);
+  padding: 4px;
+  z-index: 1000;
+}
+.darkMode {
+  background: rgba(255,255,255,0.05);
+}
+:root {
+  --startPosN: 0deg;
+  --startPosE: 90deg;
+  --startPosS: 180deg;
+  --startPosW: 270deg;
+  --pTheme1: #dce600;
+  --pTheme2: #dc0000;
+  --pTheme3: #0064fa;
+  --pTheme4: #00be1e;
+  --pTheme1atck: #ffff32;
+  --pTheme2atck: #ff5050;
+  --pTheme3atck: #00dcff;
+  --pTheme4atck: #0f0;
+  --selected: #fff;
+}
+svg.piece {
+  position: absolute;
+  display: block;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+svg.piece g.base rect.fill {
+  opacity: 0.4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
+}
+svg.piece g.base rect.border {
+  fill: none;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+svg.piece g.pieceType {
+  transform-origin: inherit;
+/* transition-duration: 750ms; */
+}
+svg.piece g.pieceType path {
+  fill: #fff;
+}
+svg.piece g.pieceType polyline {
+  stroke: #fff;
+  fill: none;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+}
+div.item.focus {
+  z-index: 5000;
+}
+div.item.focus svg.piece g.base rect.border {
+  stroke: #fff !important;
+}
+.movement {
+  transition-duration: 750ms;
+}
+.pN rect.fill {
+  fill: var(--pTheme1);
+}
+.pN rect.border {
+  stroke: var(--pTheme1);
+}
+.pE rect.fill {
+  fill: var(--pTheme2);
+}
+.pE rect.border {
+  stroke: var(--pTheme2);
+}
+.pS rect.fill {
+  fill: var(--pTheme3);
+}
+.pS rect.border {
+  stroke: var(--pTheme3);
+}
+.pW rect.fill {
+  fill: var(--pTheme4);
+}
+.pW rect.border {
+  stroke: var(--pTheme4);
+}
+.pN svg.piece g.pieceType.r0 {
+  transform: rotate(calc(var(--startPosN) + 360deg));
+}
+.pN svg.piece g.pieceType.r1 {
+  transform: rotate(calc(var(--startPosN) + 90deg));
+}
+.pN svg.piece g.pieceType.r2 {
+  transform: rotate(calc(var(--startPosN) + 180deg));
+}
+.pN svg.piece g.pieceType.r3 {
+  transform: rotate(calc(var(--startPosN) + 270deg));
+}
+.pE svg.piece g.pieceType.r0 {
+  transform: rotate(calc(var(--startPosE) + 360deg));
+}
+.pE svg.piece g.pieceType.r1 {
+  transform: rotate(calc(var(--startPosE) + 90deg));
+}
+.pE svg.piece g.pieceType.r2 {
+  transform: rotate(calc(var(--startPosE) + 180deg));
+}
+.pE svg.piece g.pieceType.r3 {
+  transform: rotate(calc(var(--startPosE) + 270deg));
+}
+.pS svg.piece g.pieceType.r0 {
+  transform: rotate(calc(var(--startPosS) + 360deg));
+}
+.pS svg.piece g.pieceType.r1 {
+  transform: rotate(calc(var(--startPosS) + 90deg));
+}
+.pS svg.piece g.pieceType.r2 {
+  transform: rotate(calc(var(--startPosS) + 180deg));
+}
+.pS svg.piece g.pieceType.r3 {
+  transform: rotate(calc(var(--startPosS) + 270deg));
+}
+.pW svg.piece g.pieceType.r0 {
+  transform: rotate(calc(var(--startPosW) + 360deg));
+}
+.pW svg.piece g.pieceType.r1 {
+  transform: rotate(calc(var(--startPosW) + 90deg));
+}
+.pW svg.piece g.pieceType.r2 {
+  transform: rotate(calc(var(--startPosW) + 180deg));
+}
+.pW svg.piece g.pieceType.r3 {
+  transform: rotate(calc(var(--startPosW) + 270deg));
+}
+div.item.available {
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  z-index: 2000 !important;
+  animation-duration: 800ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 10;
+  animation-direction: alternate;
+}
+div.item.available.pN {
+  box-shadow: 0 0 10px 3px var(--pTheme1);
+  animation-name: pNavails;
+  border: 1px solid var(--pTheme1) !important;
+}
+div.item.available.pE {
+  box-shadow: 0 0 10px 3px var(--pTheme2);
+  animation-name: pEavails;
+  border: 1px solid var(--pTheme2) !important;
+}
+div.item.available.pS {
+  box-shadow: 0 0 10px 3px var(--pTheme3);
+  animation-name: pSavails;
+  border: 1px solid var(--pTheme3) !important;
+}
+div.item.available.pW {
+  box-shadow: 0 0 10px 3px var(--pTheme4);
+  animation-name: pWavails;
+  border: 1px solid var(--pTheme4) !important;
+}
+svg.piece g.shield path.shieldfront1 {
+  fill: #111;
+}
+svg.piece g.shield path.shieldfront2 {
+  fill: #333;
+}
+svg.piece g.shield path.shieldShadow {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+svg.piece g.shield path.shieldBorder {
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+}
+.pN svg.piece g.shield path.shieldBorder {
+  fill: var(--pTheme1);
+  stroke: var(--pTheme1);
+}
+.pE svg.piece g.shield path.shieldBorder {
+  fill: var(--pTheme2);
+  stroke: var(--pTheme2);
+}
+.pS svg.piece g.shield path.shieldBorder {
+  fill: var(--pTheme3);
+  stroke: var(--pTheme3);
+}
+.pW svg.piece g.shield path.shieldBorder {
+  fill: var(--pTheme4);
+  stroke: var(--pTheme4);
+}
+svg.piece g.hidden g.eye path {
+  fill: #fff;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+svg.piece g.hidden g.rings rect {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+  opacity: 0.1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+  filter: alpha(opacity=10);
+}
+svg.piece g.hidden g.rings rect:first-child {
+  opacity: 0.05;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=5)";
+  filter: alpha(opacity=5);
+}
+svg.piece g.hidden g.rings rect:last-child {
+  opacity: 0.15;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
+  filter: alpha(opacity=15);
+}
+div.item.hasHidden svg.piece g.pieceType path {
+  fill: rgba(255,255,255,0.1);
+}
+div.item.hasHidden svg.piece g.pieceType polyline {
+  stroke: rgba(255,255,255,0.75);
+  fill: none;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+}
+div.item.attack {
+  z-index: 2000 !important;
+  animation-duration: 800ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 10;
+  animation-direction: alternate;
+}
+div.item.attack_pN {
+  box-shadow: 0 0 10px 3px var(--pTheme1);
+  border: 1px solid var(--pTheme1atck) !important;
+  animation-name: attackable;
+}
+div.item.attack_pE {
+  box-shadow: 0 0 10px 3px var(--pTheme2);
+  border: 1px solid var(--pTheme2atck) !important;
+  animation-name: attackable;
+}
+div.item.attack_pS {
+  box-shadow: 0 0 10px 3px var(--pTheme3);
+  border: 1px solid var(--pTheme3atck) !important;
+  animation-name: attackable;
+}
+div.item.attack_pW {
+  box-shadow: 0 0 10px 3px var(--pTheme4);
+  border: 1px solid var(--pTheme4atck) !important;
+  animation-name: attackable;
+}
+.pN svg.piece g.pieceType g.attackDir polyline {
+  stroke: var(--pTheme1atck);
+}
+.pN svg.piece g.pieceType g.attackDir path {
+  fill: var(--pTheme1atck);
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+}
+.pE svg.piece g.pieceType g.attackDir polyline {
+  stroke: var(--pTheme2atck);
+}
+.pE svg.piece g.pieceType g.attackDir path {
+  fill: var(--pTheme2atck);
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+}
+.pS svg.piece g.pieceType g.attackDir polyline {
+  stroke: var(--pTheme3atck);
+}
+.pS svg.piece g.pieceType g.attackDir path {
+  fill: var(--pTheme3atck);
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+}
+.pW svg.piece g.pieceType g.attackDir polyline {
+  stroke: var(--pTheme4atck);
+}
+.pW svg.piece g.pieceType g.attackDir path {
+  fill: var(--pTheme4atck);
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+}
+.scaleOut {
+  animation-fill-mode: forwards;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in, linear, ease-out;
+  animation-iteration-count: 1;
+  animation-name: ScaleUpFade;
+}
+.swipeOff {
+  animation-fill-mode: forwards;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in, linear, ease-out;
+  animation-iteration-count: 1;
+  animation-name: SwipeOff;
+}
+.slideDown {
+  animation-fill-mode: forwards;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in, linear, ease-out;
+  animation-iteration-count: 1;
+  animation-name: SlideIn;
+}
+.TEST-scaleGo:hover {
+  animation-fill-mode: forwards;
+  animation-duration: 700ms;
+  animation-timing-function: ease-in, linear, ease-out;
+  animation-iteration-count: 1;
+  animation-name: SwipeOn;
+}
+@keyframes pNavails {
+  from {
+    box-shadow: 0 0 5px 3px var(--pTheme1);
+  }
+  to {
+    box-shadow: 0 0 15px 5px var(--pTheme1);
+  }
+}
+@keyframes pEavails {
+  from {
+    box-shadow: 0 0 5px 3px var(--pTheme2);
+  }
+  to {
+    box-shadow: 0 0 15px 5px var(--pTheme2);
+  }
+}
+@keyframes pSavails {
+  from {
+    box-shadow: 0 0 5px 3px var(--pTheme3);
+  }
+  to {
+    box-shadow: 0 0 15px 5px var(--pTheme3);
+  }
+}
+@keyframes pWavails {
+  from {
+    box-shadow: 0 0 5px 3px var(--pTheme4);
+  }
+  to {
+    box-shadow: 0 0 15px 5px var(--pTheme4);
+  }
+}
+@keyframes attackable {
+  from {
+    box-shadow: 0 0 5px 3px var(--selected);
+  }
+  to {
+    box-shadow: 0 0 15px 5px var(--selected);
+  }
+}
+@keyframes ScaleUpFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  25% {
+    transform: scale(0.9);
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@keyframes SwipeOff {
+  0% {
+    transform: scale(1) rotate(0deg) translateY(0);
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    transform: scale(1.5) rotate(-360deg) translateY(-20vh);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@keyframes SlideIn {
+  0% {
+    transform: scale(1.5) translateY(-50px);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  60% {
+    transform: scale(1.5) translateY(0);
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+  }
+  80% {
+    transform: scale(0.8) translateY(0);
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
   }
 }
 /* effects */

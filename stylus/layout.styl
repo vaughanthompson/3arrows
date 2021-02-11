@@ -1,15 +1,19 @@
 //core layout
 main
     background-color: blackAlp50
-
-
 body footer
-    border-top: 1px solid lightGrey
+    border-top: 1px solid whiteAlp25
+    background-color: blackAlp25
+
 @media ttrigger
+    main 
+        // min-height: 100vh
+        padding-top: 0
+        padding-bottom: padL  
     main, div#priNav-v2, div#priNav, div#secNav, body > footer, div#carouselIndicator, div#slideNav
         padding-left: padL    
         padding-right: padL
-    main, body footer
+    body footer
         padding-top: padM
         padding-bottom: padL   
     div#priNav,
@@ -86,11 +90,6 @@ article.grid.side-by-side section > div:last-child
     padding: padXS 0 padStd padStd
 article > header
     padding: padM
-main > *
-    margin-top: marM
-main > *:first-child
-    margin-top: 0    
-
 
 
 // layout mods

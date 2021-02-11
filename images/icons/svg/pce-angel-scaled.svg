@@ -1,0 +1,10 @@
+<svg id="f3874d2a-7020-4cec-b4c9-f102dc0b85fb" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g>
+    <polyline points="37.29 48.25 32 53.55 26.71 48.25" style="fill: none;stroke: #333;stroke-miterlimit: 10;stroke-width: 1.9999999266404385px"/>
+    <path d="M30.85,48.93v0L32,50.1h0L33.16,49v0c0-4.67,0-1.89-.09-6.67C33,34.53,32.74,37,32.36,27.6h-.71c-.39,9.38-.6,6.93-.71,14.66C30.87,47,30.84,44.26,30.85,48.93Z" style="fill: #333"/>
+    <polyline points="45.59 10.45 52.87 10.45 52.87 17.73" style="fill: none;stroke: #333;stroke-miterlimit: 10;stroke-width: 1.9999999266404385px"/>
+    <path d="M50.27,14.68h0V13H48.64c-3.31,3.3-1.33,1.36-4.66,4.79-5.38,5.54-3.5,4-9.86,10.86h0l.5.5h0c6.91-6.36,5.33-4.48,10.87-9.87C48.91,16,47,18,50.27,14.68Z" style="fill: #333"/>
+    <polyline points="11.13 17.73 11.13 10.45 18.41 10.45" style="fill: none;stroke: #333;stroke-miterlimit: 10;stroke-width: 1.9999999266404385px"/>
+    <path d="M15.36,13.05H13.71v1.63h0C17,18,15.09,16,18.51,19.34c5.54,5.38,4,3.5,10.87,9.86h0l.51-.5h0C23.52,21.79,25.4,23.37,20,17.83,16.68,14.41,18.67,16.35,15.36,13.05Z" style="fill: #333"/>
+  </g>
+</svg>
