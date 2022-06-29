@@ -3,17 +3,18 @@ main
     background-color: blackAlp50
 body footer
     border-top: 1px solid whiteAlp25
-    background-color: blackAlp25
+    background-color: blackAlp50
 
 @media ttrigger
     main 
-        // min-height: 100vh
+        min-height: 90vh  - (padL)
         padding-top: 0
         padding-bottom: padL  
     main, div#priNav-v2, div#priNav, div#secNav, body > footer, div#carouselIndicator, div#slideNav
         padding-left: padL    
         padding-right: padL
     body footer
+        min-height: 10vh - (padM + padL)
         padding-top: padM
         padding-bottom: padL   
     div#priNav,
@@ -276,15 +277,12 @@ div.content.cE
 
 
 // footer
-body > footer div.content section > div
+body > footer div.content section
     padding: padXL
 @media ttrigger
-    body > footer div.content section > div
+    body > footer div.content section
         padding: padStd padM
-    body > footer section
-        border-right:1px dotted lightGrey
-    body > footer section:last-child
-        border-right:none
+
 
 // desktop navigation
 div#masthead
@@ -387,16 +385,23 @@ div#carouselIndicator > div:first-child > div:first-child
 #navHeader
     position: fixed
     z-index: 7000
-    background-color: whiteAlp90
-    border-bottom:1px solid white
-    width:94vw
-    padding-left: padM
-    padding-right: padM 
+    background-color: brand1a
+    width:100vw
+    padding-left: 0
+    padding-right: 0 
     display: flex
     align-items: center
     justify-content: space-between
 #navHeader div#mblNavControl
-    display: flex    
+    display: flex 
+    padding-right: rBorderXXS
+#navHeader div#mblNavControl > *
+    margin-right: rBorderStd     
+#navHeader div.status
+    flex-basis: 100%
+    margin-right: 3vw
+#navHeader > *
+    //{test}   
 div.mblnav
     display: none;
     position: fixed
@@ -405,7 +410,7 @@ div.mblnav
     width: 100%
     height: 100%
     z-index: 6001
-    background-color: white
+    background-color: black
 div.mblnavContainer
     position: absolute
     top: 0
@@ -416,7 +421,8 @@ div.mblnavContainer
     overflow-y: auto
     /* Optional but highly reccomended: enables momentum scrolling on iOS */
     -webkit-overflow-scrolling: touch
-    background-color: white
+    background-image: url(/images/textures/kraft-dk/tile.jpg)
+    background-color: black
 .open
     opacity: 1 !important
 div.containMNav
@@ -435,10 +441,16 @@ div.containMNav h6
     font-size: 1em
     margin-top: marStd
     margin-bottom: marL
-@media mtrigger
+
+/* @media mtrigger
     html.noscroll 
         overflow: hidden 
     body.noscroll
         overflow: visible
-        height: 100%
-   
+        height: 100% */
+// use noscroll on all views since using modal nav on all        
+html.noscroll 
+    overflow: hidden 
+body.noscroll
+    overflow: visible
+    height: 100%   

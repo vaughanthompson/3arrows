@@ -82,7 +82,7 @@
         $('#navCart').show();
         $('#navTrigger').show();
         $("div.mblnavContainer").scrollTo(0);
-        $('div.mblnav').hide();
+        $('div.mblnav').fadeOut(250, function(){ $(this).hide(); });
         $('html, body').removeClass('noscroll');
         return false;
     });
@@ -91,7 +91,7 @@
         $(this).hide();
         $('#navCart').hide();
         $('#navClose').show();
-        $('div.mblnav').show();
+        $('div.mblnav').fadeTo(250,1.0);
         $('html, body').addClass('noscroll');
         return false;
 

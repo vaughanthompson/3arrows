@@ -3,7 +3,7 @@
 
 
 
-div#gameboard
+div.gameboard
     display: inline-block
     position: relative
     margin: 0px auto
@@ -12,14 +12,14 @@ div#gameboard
     border-radius: rBorderM
     padding: padXXS
 
-div#gameboard div.fluff
+div.gameboard div.fluff
     border-style: double
     border-color: whiteAlp25
     border-width: 3px
     border-radius: rBorderStd
     padding: padXXS
 
-div#gameboard div.container
+div.gameboard div.container
     height: 75vh
     width: 75vh
     display: grid
@@ -29,17 +29,44 @@ div#gameboard div.container
     border-right: 1px solid
     border-bottom: 1px solid
     border-color: whiteAlp50
+div.gameboard div.dashContain
+    height: 7.5vh
+    width: 75vh
+    display: grid
+    grid-auto-flow: row
+    grid-gap: 0
+    align-items: stretch
+    border-right: 1px solid
+    border-bottom: 1px solid
+    border-color: whiteAlp50    
+@media phoneRule
+    div.gameboard div.container
+        height: 85vw
+        width: 85vw
+@media tabletRule
+    div.gameboard div.container
+        height: 60vh
+        width: 60vh
 
-div#gameboard.g6x6 div.container
+div.gameboard.g6x6 div.container
     grid-template-columns: repeat(6, 1fr)
     grid-template-rows: repeat(6, 1fr)
 
-div#gameboard.g8x8 div.container
+div.gameboard.g7x7 div.container
+    grid-template-columns: repeat(7, 1fr)
+    grid-template-rows: repeat(7, 1fr)
+
+div.gameboard.g8x8 div.container
     grid-template-columns: repeat(8, 1fr)
     grid-template-rows: repeat(8, 1fr)
 
+div.gameboard.g10x1 div.dashContain
+    grid-template-columns: repeat(10, 1fr)
+    grid-template-rows: repeat(1, 1fr)
 
-div#gameboard div.container > div.item
+
+div.gameboard div.container > div.item,
+div.gameboard div.dashContain > div.item
     position relative
     border: 1px solid
     border-right: none
@@ -59,18 +86,19 @@ div#gameboard div.container > div.item
 
 /* pieces and piece theming */    
 :root {
+    --startPos: 0deg;
     --startPosN: 0deg;
     --startPosE: 90deg;
     --startPosS: 180deg;
     --startPosW: 270deg;
-    --pTheme1:rgba(220,230,0,1.0);
-    --pTheme2:rgba(220,0,0,1.0);
-    --pTheme3:rgba(0,100,250,1.0);
-    --pTheme4:rgba(0,190,30,1.0);
-    --pTheme1atck:rgba(255,255,50,1.0);
-    --pTheme2atck:rgba(255,80,80,1.0);
-    --pTheme3atck:rgba(0,220,255,1.0);
-    --pTheme4atck:rgba(0,255,0,1.0);
+     --pTheme1:rgba(255,0,0,1.0);
+    --pTheme2:rgba(0,0,255,1.0);
+    --pTheme3:rgba(0,181,69,1.0);
+    --pTheme4:rgba(255,208,0,1.0);
+    --pTheme1atck:rgba(255,0,0,1.0);
+    --pTheme2atck:rgba(0,0,255,1.0);
+    --pTheme3atck:rgba(0,181,69,1.0);
+    --pTheme4atck:rgba(255,208,0,1.0);
     --selected:rgba(255,255,255,1.0);
 
  
@@ -82,14 +110,14 @@ svg.piece  {
     opacity:1.0;
 }
 svg.piece g.base rect.fill {
-    opacity:0.4;
+    opacity:0.8;
     //mix-blend-mode: color-dodge;
 }
 svg.piece g.base rect.border {
     fill: none;
     stroke-miterlimit: 10;
     stroke-width: 2px;
-    opacity:1.0;
+    opacity:0.95;
 }
 svg.piece g.pieceType {
     transform-origin: inherit;
@@ -121,25 +149,25 @@ div.item.focus svg.piece g.base rect.border {
 }
 
 /* piece theming */
-.pN rect.fill {fill: var(--pTheme1);}
-.pN rect.border {stroke: var(--pTheme1);}
-.pE rect.fill {fill: var(--pTheme2);}
-.pE rect.border {stroke: var(--pTheme2);}
-.pS rect.fill {fill: var(--pTheme3);}
-.pS rect.border {stroke: var(--pTheme3);}
-.pW rect.fill {fill: var(--pTheme4);}
-.pW rect.border {stroke: var(--pTheme4);}
+.p1 rect.fill {fill: var(--pTheme1);}
+.p1 rect.border {stroke: var(--pTheme1);}
+.p2 rect.fill {fill: var(--pTheme2);}
+.p2 rect.border {stroke: var(--pTheme2);}
+.p3 rect.fill {fill: var(--pTheme3);}
+.p3 rect.border {stroke: var(--pTheme3);}
+.p4 rect.fill {fill: var(--pTheme4);}
+.p4 rect.border {stroke: var(--pTheme4);}
 
 
 
 
 /* piece rotations relative to start position of looking N,E,W,S */
-.pN svg.piece g.pieceType.r0 {transform: rotate(calc(var(--startPosN) + 360deg));}
-.pN svg.piece g.pieceType.r1 {transform: rotate(calc(var(--startPosN) + 90deg));}
-.pN svg.piece g.pieceType.r2 {transform: rotate(calc(var(--startPosN) + 180deg));}
-.pN svg.piece g.pieceType.r3 {transform: rotate(calc(var(--startPosN) + 270deg));}
+//g.pieceType.r0 {transform: rotate(calc(var(--startPosN) + 360deg));}
+div.item.r90 g.pieceType {transform: rotate(calc(var(--startPos) + 90deg));}
+div.item.r180 g.pieceType {transform: rotate(calc(var(--startPos) + 180deg));}
+div.item.r270 g.pieceType {transform: rotate(calc(var(--startPos) + 270deg));}
 
-.pE svg.piece g.pieceType.r0 {transform: rotate(calc(var(--startPosE) + 360deg));}
+/*.pE svg.piece g.pieceType.r0 {transform: rotate(calc(var(--startPosE) + 360deg));}
 .pE svg.piece g.pieceType.r1 {transform: rotate(calc(var(--startPosE) + 90deg));}
 .pE svg.piece g.pieceType.r2 {transform: rotate(calc(var(--startPosE) + 180deg));}
 .pE svg.piece g.pieceType.r3 {transform: rotate(calc(var(--startPosE) + 270deg));}
@@ -153,7 +181,7 @@ div.item.focus svg.piece g.base rect.border {
 .pW svg.piece g.pieceType.r1 {transform: rotate(calc(var(--startPosW) + 90deg));}
 .pW svg.piece g.pieceType.r2 {transform: rotate(calc(var(--startPosW) + 180deg));}
 .pW svg.piece g.pieceType.r3 {transform: rotate(calc(var(--startPosW) + 270deg));}
-
+*/
 
 /* available moves anim */
 div.item.available {
@@ -204,51 +232,95 @@ div.item.available.pW {
 
 /* shield .. hidden */
 svg.piece g.shield path.shieldfront1 {
-    fill: #111;
+    fill: #fff;
 }
 svg.piece g.shield path.shieldfront2 {
     fill: #333;
 }
 svg.piece g.shield path.shieldShadow {
-    opacity: 0.5;
+    opacity: 0.3;
 }
 svg.piece g.shield path.shieldBorder {
     stroke-miterlimit: 10;
-    stroke-width: 3px
+    stroke-width: 1px;
+    stroke: #fff;
+
 }
-.pN svg.piece g.shield path.shieldBorder {
-    fill: var(--pTheme1);
+.p1 svg.piece g.shield path.shieldBorder {
     stroke: var(--pTheme1);
 }
-.pE svg.piece g.shield path.shieldBorder {
-    fill: var(--pTheme2);
+.p2 svg.piece g.shield path.shieldBorder {
     stroke: var(--pTheme2);
 }
-.pS svg.piece g.shield path.shieldBorder {
-    fill: var(--pTheme3);
+.p3 svg.piece g.shield path.shieldBorder {
     stroke: var(--pTheme3);
 }
-.pW svg.piece g.shield path.shieldBorder {
-    fill: var(--pTheme4);
+.p4 svg.piece g.shield path.shieldBorder {
     stroke: var(--pTheme4);
 }
-svg.piece g.hidden g.eye path {
-    fill: #fff;
-    opacity: 0.9;
+.p1 svg.piece g.shield path.shieldfront2,
+.p1 svg.piece g.eyeShdw path {
+    fill: var(--pTheme1);
+    //stroke: var(--pTheme1);
 }
+.p2 svg.piece g.shield path.shieldfront2,
+.p2 svg.piece g.eyeShdw path {
+    fill: var(--pTheme2);
+    //stroke: var(--pTheme2);
+}
+.p3 svg.piece g.shield path.shieldfront2,
+.p3 svg.piece g.eyeShdw path {
+    fill: var(--pTheme3);
+    //stroke: var(--pTheme3);
+}
+.p4 svg.piece g.shield path.shieldfront2,
+.p4 svg.piece g.eyeShdw path {
+    fill: var(--pTheme4);
+    //stroke: var(--pTheme4);
+}
+svg.piece g.eye path {
+    fill: #fff;
+    opacity: 0.75;
+}
+
+.p4 svg.piece g.eye path {
+    fill: #333;
+    opacity: 0.75;
+}
+
+.p4 svg.piece g.eye path {
+    fill: #333;
+    opacity: 0.75;
+}
+
+.p4 svg.piece g.eye path {
+    fill: #333;
+    opacity: 0.75;
+}
+
+.p4 svg.piece g.eye path {
+    fill: #333;
+    opacity: 0.75;
+}  
+
+
+
+
 svg.piece g.hidden g.rings rect {
     fill: none;
     stroke: #fff;
     stroke-miterlimit: 10;
     stroke-width: 3px;
-    opacity: 0.1;
+    opacity: 0.2;
 }
 svg.piece g.hidden g.rings rect:first-child {
-    opacity: 0.05;
-}
-svg.piece g.hidden g.rings rect:last-child {
     opacity: 0.15;
 }
+svg.piece g.hidden g.rings rect:last-child {
+    opacity: 0.25;
+}
+
+
 
 div.item.hasHidden svg.piece g.pieceType path {
     fill: whiteAlp10;
@@ -387,3 +459,25 @@ div.item.attack_pW {
     animation-iteration-count: 1;
     animation-name: SwipeOn;
 }
+
+
+/* standalone piece */
+span.isoSVG
+    display: inline-block
+    width: 25px
+    height: 25px
+    position: relative
+    margin-bottom: -4px
+    margin-left: 4px
+    margin-right: 4px
+
+
+span.isoSVG.x2
+    display: inline-block
+    width: 50px
+    height: 50px
+    position: relative
+    margin-bottom: -4px
+    margin-left: 4px
+    margin-right: 4px
+

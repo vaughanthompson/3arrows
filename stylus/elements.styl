@@ -5,11 +5,11 @@
     display: flex
     justify-content: center
     align-items: center
-    width: 50px
-    height: 50px
-    padding:0.3em
-    font-size: 1.9em
-    border-radius: 50%
+    width: 35px
+    height: 35px
+    padding:0.1em
+    font-size: 1.7em
+    border-radius: 8px
 .icon.alt
     background-color: brand2
 .ic-basic
@@ -26,7 +26,7 @@
 
 #navMobile .icon,
 #navHeader .icon
-    background: none
+    background: black
 body > footer .icon
     display: inline-flex
     // background-color: blackAlp10
@@ -100,8 +100,17 @@ div.cta > div > h6
         padding-bottom: padM
 
 // logos
-.mLogo img
-    height: 5.2vh 
+.mLogo
+    width: 50px
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 1.6em
+    margin-right: marStd
+    padding-left: padXXS
+    padding-right: padXXS
+    border-right:1px solid whiteAlp50
 #priNav-v2 a.logo-small img,
 #priNav a.logo-small img
     display: block
@@ -120,7 +129,7 @@ body > footer img.logo
     height: auto      
 @media ttrigger    
     body > footer img.logo
-        width: 5vw
+        width: 120px
     .inpage-logo
         width: 30vw
     .inpage-logo-stacked
@@ -463,3 +472,6 @@ ul.featureList li strong
 #contact #inputContainer.done #errorText 
     display: none
 
+/* header elements */
+div.outer 
+    background-color: black
