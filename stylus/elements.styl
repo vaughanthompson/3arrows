@@ -40,48 +40,31 @@ body > footer .icon
     padding: 0
 // ctas
 a.majorCTA,
-a.ctaButton
+a.ctaButton,
+input[type=submit]
     color: white
-    background-color: brand3
-    padding: padXXS padXS padXXS padXS
-    margin-bottom: 7px
+    background-color: material
+    border: 1px solid material
+    padding: 14px 20px 9px 20px
+    margin-bottom: 1em
     display: inline-block
     white-space: nowrap
-    border-radius: 2em
-    font-size: 0.8em
+    border-radius: 8px
+    font-size: 1em
+    line-height: 140%
     font-weight: 500
+    text-decoration: none
+input[type=submit]
+    margin-bottom: 0
 div#masthead a.majorCTA
     color: white !important
-a.ctaButton
-    border-radius: 0
-    background: none
-    color: brand1
-    font-size: 1em
-    font-weight:700
-    border-bottom: 2px solid brand1
-    padding-left: 5px
-    padding-right: 5px
-    margin-right:marXXS
-    display: inline-flex
-    justify-content: space-between
-    transition: 0.2s
-    white-space: normal
-
 a.ctaButton i
     margin-left:15px 
     margin-right:10px;
     transition: 0.2s 
 a.ctaButton i:before
     color: brand1
-a.ctaButton:hover,
-a.ctaButton:hover > i:before
-    color: brand2
-    border-color: brand2
-    transition: 0.2s 
-a.ctaButton:hover i
-    margin-left:25px; 
-    margin-right:0px; 
-    transition: 0.5s 
+
 #priNav a.majorCTA
     text-shadow: 0px 1px 2px halfDark    
     box-shadow: 0px 2px 2px black
@@ -90,14 +73,20 @@ div.cta > div
 div.cta > div > h6
     margin-bottom: 0
 
-@media phoneRule
-    a.majorCTA
-        font-size:1.1em
-        font-weight: 800
-        padding: padM padXL padM padXL  
-    a.ctaButton
-        padding-top: padM
-        padding-bottom: padM
+@media (pointer: fine)
+    input[type=submit]:hover,
+    a.ctaButton:hover,
+    a.ctaButton:hover > i:before
+        color: white
+        border-color: white
+        background: none
+        opacity: 1.0
+    a.ctaButton:hover i
+        margin-left:25px; 
+        margin-right:0px; 
+        transition: 0.5s 
+
+
 
 // logos
 .mLogo
@@ -139,6 +128,39 @@ body > footer img.logo
         width: 25vw
     .inpage-logo-stacked
         width: 10vw
+
+// flags
+span.flag
+    display: inline-block
+    transform: rotate(-10deg)
+    border: 1px solid whiteAlp50
+    box-shadow: 0 3px 4px 0px black
+span.flag
+    width:30px 
+span.flag.small
+    width: 20px
+h1 span.flag
+    width:50px
+    margin: 0 12px 5px
+h2 span.flag
+    width:37px
+    margin: 0 10px 3px
+h3 span.flag
+    width:30px
+    margin: 0 10px 3px
+h4 span.flag
+    width:25px
+    margin: 0 8px 2px
+h5 span.flag
+    width:22px
+    margin: 0 6px 2px
+h6 span.flag
+    width:20px
+    margin: 0 6px 1px
+p span.flag
+    width:18px
+    margin: 0 6px 1px
+
 
 
 .grid-clients
@@ -195,7 +217,7 @@ i.block
     width: 100%
     height: 100%
 div.video
-    position: relative
+    position: relative  
 div.video > div
     width: 100%
     height: 100%  
@@ -230,7 +252,26 @@ img
 img.med
     width: 75%
     margin: 0px auto
-
+picture.med
+    width: 75%
+picture.small
+    width: 60%
+picture.tiny
+    width: 30%        
+.heroLogo
+    width: 80% 
+    opacity: 0.75
+picture 
+    margin: 0 0 marM 0
+    display: block
+picture.bordered 
+    margin: 0 0 marM 0
+    padding: padXXS
+    border-radius: 8px
+    box-shadow: inset 0 0 0px 1px whiteAlp10, inset 0 0 0px 4px black, inset 0 0 0px 5px whiteAlp25
+@media phoneRule
+    picture 
+        margin: marM
 
 
 // caption and quote styling
@@ -422,56 +463,77 @@ ul.featureList li strong
     display: inline-block
     min-width:12%
 
-/* form */
-#contact label 
-    display: block
-    line-height: 2em
-    margin-bottom: 0.3em
-#contact input,
-#contact textarea 
-    width: 90%
-    padding:2%;
-    margin-bottom: 1em
-#contact input[type=submit]
-    width: auto
-    padding-left: padStd
-    padding-right: padStd
-
-/* Contact form defaults */
-#contact #inputContainer #loadingText,
-#contact #inputContainer #errorText,
-#contact #inputContainer #doneText
-    display: none
-
-
-/* Contact form loading */
-#contact #inputContainer.loading #loadingText
-    display: block
-
-#contact #inputContainer.loading #submit,
-#contact #inputContainer.loading #errorText,
-#contact #inputContainer.loading #doneText
-    display: none
-
-/* Contact form error */
-#contact #inputContainer.error #errorText 
-    display: block
-
-#contact #inputContainer.error #submit,
-#contact #inputContainer.error #loadingText,
-#contact #inputContainer.error #doneText 
-    display: none
-
-
-/* Contact form done */
-#contact #inputContainer.done #doneText
-    display: block
-
-#contact #inputContainer.done #submit,
-#contact #inputContainer.done #loadingText,
-#contact #inputContainer.done #errorText 
-    display: none
 
 /* header elements */
 div.outer 
     background-color: black
+
+
+/* in-page slider ctrl */
+body.mktng span.controlSlider
+    display: block
+    position: relative
+    width: 25vw
+    height: 25vw*2
+    background-image: url(/images/genericPhone.png)
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    margin: 0px auto marL auto
+    border-radius: 3.5vw
+    box-shadow: 0 0 30px 5px rgba(0,0,0,0.9)
+
+div.videoContent
+    position: absolute
+    margin: 2vh 1.75vw
+    width: 86%   
+    overflow: hidden
+    z-index:1
+
+div.videoContent div#vidHolder video
+    border-radius: 2vw
+
+
+body.mktng span.controlSlider .owl-theme-slider1 .owl-item,
+body.mktng span.controlSlider .owl-theme-slider1 div.item
+   height: 25vw*2
+
+body.mktng span.controlSlider .owl-theme-slider1 div.item
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    flex-wrap: wrap
+    flex-basis: 100%
+
+span.controlSlider div.itemContent
+    align-self: stretch
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    flex-wrap: nowrap
+    width: 100% 
+    /* background-color: rgba(1,1,1,1.0)*/
+    margin: 2.2vh 1.75vw
+    border-radius: 2vw
+    background-position: center top
+    background-repeat: no-repeat
+    background-size: contain
+    z-index: 2
+
+span.controlSlider div.itemContent > div 
+    text-align: center
+    padding: 1vw 2vw
+    width: 100%
+    background: linear-gradient(to top, 20% rgba(0,0,0,0.9), 50% rgba(0,0,0,0.75), rgba(0,0,0,0.0) ) 
+
+
+// tables
+table td
+    padding: padXXS*0.5
+    margin: 0
+table.list
+    {test}
+    width: 100%
+table.list thead
+   border-bottom: 1px solid whiteAlp50
+   

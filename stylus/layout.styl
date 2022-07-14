@@ -10,12 +10,12 @@ body footer
         min-height: 90vh  - (padL)
         padding-top: 0
         padding-bottom: padL  
-    main, div#priNav-v2, div#priNav, div#secNav, body > footer, div#carouselIndicator, div#slideNav
-        padding-left: padL    
-        padding-right: padL
+    main, div#priNav-v2, div#priNav, div#secNav, body > footer, div#carouselIndicator, div#slideNav, body > div.owl-theme div.contentHdr
+        padding-left: padL*1.5    
+        padding-right: padL*1.5
     body footer
         min-height: 10vh - (padM + padL)
-        padding-top: padM
+        padding-top: padL
         padding-bottom: padL   
     div#priNav,
     div#priNav-v2
@@ -40,16 +40,16 @@ div.content
     height: 100%
 div.contentHdr
     position: relative
-    z-index: 2    
+    z-index: 2 
 div.content > section > div
-    padding: padXL padM padXL padM
+    padding: padStd
+    margin-top: marStd
+    margin-bottom: marM
 *.pullUp div.content > section > div
     padding-top: 0
 *.inset div.content
     justify-content: center
-*.inset div.content > section > div
-    padding: padM
-    padding-right: padL   
+ 
 *.fullH
     height: fullH 
 *.largeH
@@ -92,8 +92,14 @@ article.grid.side-by-side section > div:last-child
 article > header
     padding: padM
 
+body.mktng > main
+    padding-top: padStd
+body.mktng > main > header,
+body.mktng > main > article
+    padding-top: padL 
+    padding-bottom: padStd 
 
-// layout mods
+
 *.centerMe div.content
     text-align: center 
 // positioning in image articles - default is left-top-left ie, no classing
@@ -125,16 +131,18 @@ div.content.cE
     text-align: left 
   
 @media phoneRule
-    main, body > footer
+    main, body > footer, body > div.owl-theme div.contentHdr
         padding: padM    
     div.content section > div
-        padding: padXL*1.5 padL*1.4 padXL*1.5 padL*1.5 !important
+        padding: padXL*1.5 padL*1.4 padXL*1.5 padL*1.5
     article > header
-        padding: padXL*1.5 padL*1.4 padL*1.5 padL*1.5 !important
+        padding: padXL*1.5 padL*1.4 padL*1.5 padL*1.5
         border: none;
     div.picturefill-background div.content
         display: flex
         align-items: flex-end
+    div.picturefill-background div.content.hero
+        align-items: center
         // background-color: blackAlp25
     div.picturefill-background div.content section
         width:100%  
@@ -162,12 +170,6 @@ div.content.cE
         min-height: halfH
     article.imageContent
         margin-bottom: 0
-    body > footer div.content section > div
-        padding-top: padL !important
-        padding-bottom: padL !important
-    body > footer
-        padding-top: padXL*2
-        padding-bottom: padXL*2
     .remSec section > div:first-child
         display: none;
     .remSec section > div
@@ -180,11 +182,9 @@ div.content.cE
         display: flex
         justify-content: space-between
         flex: 1 1 auto
+        column-gap: marXL
     div.content > section
         flex-basis: 70%
-        margin-right: marXS
-    div.content > section:last-child
-        margin-right: 0
     article.alignMiddle div.content
         align-items: center
     article.grid div.content
@@ -277,11 +277,51 @@ div.content.cE
 
 
 // footer
-body > footer div.content section
-    padding: padXL
+body > footer section
+    padding: padL
+body > footer section > a
+    display: inline-block
+    margin-bottom: 0.75em
+    text-decoration: underline
+@media phoneRule
+    body > footer
+        border-top: none
+    body > footer section
+        text-align: center
+        border-top: 4px solid brand1
+    body > footer img.logo
+        margin: 2em auto
+        width: 30vw !important
+    body > footer p,
+    body > footer a
+        max-width: 75%
+        margin: 1em auto
+        font-size: 1em !important
+        line-height: 1.3em !important
 @media ttrigger
-    body > footer div.content section
-        padding: padStd padM
+    body > footer section:last-child
+        border-top: 4px solid brand1
+    body > footer img.logo
+        margin-bottom: 2em
+    body > footer p,
+    body > footer a
+        max-width: 90%
+@media dtrigger
+    body > footer section
+        padding: 0 padStd
+    body > footer
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+        column-gap: marL
+    body > footer > section
+        flex-basis: 30%
+    body > footer section:last-child
+        border-top: none
+    body > footer p,
+    body > footer a
+        max-width: 100%
+
 
 
 // desktop navigation
@@ -454,3 +494,5 @@ html.noscroll
 body.noscroll
     overflow: visible
     height: 100%   
+
+

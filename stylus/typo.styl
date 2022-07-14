@@ -1,13 +1,28 @@
 // typo defaults
 a:link, a:visited
     color: white
-    text-decoration: none
+    text-underline-offset: 2px
+    transition: 0.2s
+#navHeader a
+    text-decoration: none    
 p a:link,
 p a:visited,
 li a:link,
 li a:visited
     text-decoration: underline
+@media (pointer: fine)
+    a:hover 
+        opacity: 0.75 
 
+.iconLink 
+    text-decoration: none
+    position relative
+.iconLink span
+    text-decoration: underline
+    margin-left: marXXS*0.5
+.iconLink::before
+    font-size: 1.5em
+    vertical-align: sub
 
 // custom typo
 ul
@@ -32,12 +47,13 @@ ul li
     *.picturefill-background.darktext,
     *.picturefill-background.darktext a
         color: black          
+/*
 *.picturefill-background a
     text-decoration: underline
+*/
 
 
-
-.activeLink, 
+/* .activeLink, 
 .activeLang, 
 nav a:hover,
 p a:hover,
@@ -48,7 +64,7 @@ li a:hover,
 .activeLink,
 nav a:hover
     border-bottom-color: brand2 !important
-
+*/
 
 // nav typo
 div#masthead a:link,
@@ -103,12 +119,14 @@ div#slideNav nav a
 
 h1, h2, h3, h4 ,h5, h6
     margin: 0
-    margin-bottom: marXXS
-
+    margin-bottom: 0.5em
+main p 
+    margin: 0
+    margin-bottom: marStd
 // defaults   
 h1, .h1
     font-weight: 700
-    font-size: 3.5em
+    font-size: 3.7em
     line-height: 105%
     letter-spacing: -0.05em
 h1 span, .h1 span
@@ -116,7 +134,7 @@ h1 span, .h1 span
     letter-spacing: -0.02em    
 h2, .h2
     font-weight: 700
-    font-size: 2.7em
+    font-size: 2.5em
     line-height: 115%
     letter-spacing: -0.035em
 h2 span, .h2 span
@@ -124,19 +142,19 @@ h2 span, .h2 span
     letter-spacing: -0.015em    
 h3, .h3
     font-weight: 550
-    font-size: 2.1em
-    line-height: 115%
+    font-size: 2em
+    line-height: 120%
     letter-spacing: -0.04em
 h3 span, .h3 span
     font-weight: 300
     letter-spacing: -0.02em    
 h4, .h4
-    font-weight: 600
-    font-size: 1.7em
+    font-weight: 300
+    font-size: 1.6em
     line-height: 120%
     letter-spacing: -0.02em
 h4 span, .h4 span
-    font-weight: 400    
+    font-weight: 700    
 h5, .h5
     font-weight: 700
     font-size: 1.4em
@@ -147,14 +165,14 @@ h5 span, .h5 span
     letter-spacing: -0.01em      
 h6, .h6
     font-weight: 500
-    font-size:1em
-    line-height: 130%
+    font-size:1.2em
+    line-height: 150%
     letter-spacing: -0.015em
 h6 span, .h6 span
     font-weight: 600
-p
+p, a
     font-size: 1em
-    line-height: 140%
+    line-height: 150%
     margin-top: 0
 strong 
     font-weight: 700
