@@ -134,11 +134,11 @@ span.flag
     display: inline-block
     transform: rotate(-10deg)
     border: 1px solid whiteAlp50
-    box-shadow: 0 3px 4px 0px black
+    box-shadow: 1px 3px 4px 0px blackAlp75
 span.flag
     width:30px 
 span.flag.small
-    width: 20px
+    width: 18px
 h1 span.flag
     width:50px
     margin: 0 12px 5px
@@ -528,12 +528,69 @@ span.controlSlider div.itemContent > div
 
 
 // tables
-table td
-    padding: padXXS*0.5
+table
+    margin: marXS 0
+table td,
+table th
+    padding: padXXS padXXS*0.6 padXXS*0.8
     margin: 0
+    font-size:95%
+table th i
+    font-size:1.3em
 table.list
-    {test}
+    padding: padXXS
+    background-color: blackAlp50
     width: 100%
-table.list thead
-   border-bottom: 1px solid whiteAlp50
-   
+    position: relative
+table.list thead th
+   padding-bottom: padXXS*0.7
+   border-bottom: 1px solid white
+   text-align: left
+   color: whiteAlp75
+   font-weight: 400
+   white-space: nowrap
+table.list tbody tr:nth-child(even)
+   background-color: whiteAlp05   
+table.list tbody td
+    font-weight: 500
+div.fixedHeightTable
+    max-height: 30vh
+    margin: marXS 0
+    overflow: auto
+div.fixedHeightTable table
+    margin: 0
+    padding-top: 0
+div.fixedHeightTable th
+    padding-top: padXXS 
+    position: -webkit-sticky    
+    position: sticky
+    top: 0
+    z-index: 2
+    background-color: black
+    vertical-align: bottom
+tr.player
+    color: material
+
+
+// lozenge filter
+ul.lozengeFilter
+    padding: 0
+ul.lozengeFilter li
+    display: inline-block
+    list-style-type: none
+    line-height: 1em
+    margin: 0
+
+ul.lozengeFilter li a
+    display: inline-block
+    text-decoration: none
+    background-color: whiteAlp10
+    padding: padXS*0.5 padXS padXXS*0.6 padXS
+    line-height: 1em
+    font-size: 0.9em
+    text-underline-offset: 0px
+    border-radius: 50px
+
+ul.lozengeFilter li a.active
+    background-color: whiteAlp50
+    font-weight: 700

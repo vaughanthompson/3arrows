@@ -294,22 +294,24 @@
             <div class="content">
                 <section>
                     <div>
-                        <h3><i class="icon-logo3-box"></i>&nbsp;&nbsp;Ranking Top 10</h3>
+                        <h3><i class="icon-ranking"></i>&nbsp;&nbsp;Ranking Top 10</h3>
                         <ul class="lozengeFilter">
                             <li><a href="#" class="active">Overall</a></li>
                             <li><a href="#">2P</a></li>
                             <li><a href="#">3P</a></li>
                             <li><a href="#" >4P</a></li>
                         </ul>
-                        <table class="list">
+                     
+                        
+                        <table class="list" cellspacing="0" cellpadding="0">
                             <thead>
                                 <tr class="minor">
-                                    <td>POS.</td>
-                                    <td>Name (Rating)</td>
-                                    <td>W</td>
-                                    <td>D</td>
-                                    <td>L</td>
-                                    <td><i class="icon-insert_emoticon"></i></td>
+                                    <th>POS.</th>
+                                    <th>Name (Rating)</th>
+                                    <th>W</th>
+                                    <th>D</th>
+                                    <th>L</th>
+                                    <th><i class="icon-world"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -405,15 +407,91 @@
 
                 <section>
                     <div>
-                        <h3><i class="icon-logo3-box"></i>&nbsp;&nbsp;Join a Game</h3>
+                        <h3><i class="icon-group_add"></i>&nbsp;&nbsp;Join a Game</h3>
                         <ul class="lozengeFilter">
                             <li><a href="#" class="active">2P</a></li>
                             <li><a href="#">3P</a></li>
                             <li><a href="#" >4P</a></li>
                         </ul>
-                        <p>Started a game on a laptop and heading out to the beach? After you've slapped on your sunscreen you can simply pop open your mobile device and continue your game.</p>
-                                                
-                        <p class="minor">* Modern browser support (Chrome, Firefox, Safari, Edge, Opera). The game may be playable on older browsers but it is not recommended.</p>
+                        
+                        <table class="list" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr class="minor">
+                                    <th>Game Title (Created by)</th>
+                                    <th>Rated</th>
+                                    <th>Turn Time</th>
+                                    <th><i class="icon-emoji_people"></i> Reqd</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="">Really Really long game</a> <span class="minor">(Carlin the Archer)</span></td>
+                                    <td>Y</td>
+                                    <td>30m</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">A game</a> <span class="minor">(Thompy)</span></td>
+                                    <td>Y</td>
+                                    <td>30m</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">LFG</a> <span class="minor">(Carlin the Archer)</span></td>
+                                    <td>Y</td>
+                                    <td>1h</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Really Really long game</a> <span class="minor">(Carlin the Archer)</span></td>
+                                    <td>N</td>
+                                    <td>2h</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Really Really long game</a> <span class="minor">(Carlin the Archer)</span></td>
+                                    <td>Y</td>
+                                    <td>30m</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Really Really long game</a> <span class="minor">(Carlin the Archer)</span></td>
+                                    <td>Y</td>
+                                    <td>30m</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">A game</a> <span class="minor">(Thompy)</span></td>
+                                    <td>Y</td>
+                                    <td>30m</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">LFG</a> <span class="minor">(Carlin the Archer)</span></td>
+                                    <td>Y</td>
+                                    <td>1h</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Really Really long game</a> <span class="minor">(Carlin the Archer)</span></td>
+                                    <td>N</td>
+                                    <td>2h</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Really Really long game</a> <span class="minor">(Carlin the Archer)</span></td>
+                                    <td>Y</td>
+                                    <td>30m</td>
+                                    <td>1</td>
+                                </tr>
+                            
+                                
+    
+         
+                            </tbody>
+                        </table>
+    
+                        <a href="#">See more</a>
                     </div> 
                         
                 </section>
@@ -422,6 +500,21 @@
 
 
         
+
+        <!-- lifestyle imagery -- random from set -->
+            <div class="picturefill-background largeH darktext"><!-- multply lighten here-->
+                <div class="contentHdr"><!-- gradient or straight bgoverlay here-->
+                    <div class="content rC cC">
+                        <section>
+                            <div>
+                                &nbsp;
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <span data-src="/images/imagery/life1-mob.jpg"></span><!-- ph -->        
+                <span data-src="/images/imagery/life1-desk.jpg" data-media="(min-width: 1100px)"></span><!-- desktop -->    
+            </div>
 
 
 
@@ -548,7 +641,7 @@
 
 
         var iterations = 1;
-        bgvid.addEventListener('ended', function () {
+        bgv.addEventListener('ended', function () {
             if (iterations < 3) {
                 this.currentTime = 0;
                 this.play();
