@@ -349,7 +349,7 @@ div.content.cE {
   main,
   body > footer,
   body > div.owl-theme div.contentHdr {
-    padding: 3vw;
+    padding: 1.8vw;
   }
   div.content section > div {
     padding: 10.5vw 7vw 10.5vw 7.5vw;
@@ -909,7 +909,7 @@ div#carouselIndicator > div:first-child > div:first-child {
   padding-right: 2px;
 }
 #navHeader div#mblNavControl > * {
-  margin-right: 8px;
+  margin-right: 4px;
 }
 #navHeader div.status {
   -ms-flex-preferred-size: 100%;
@@ -1020,6 +1020,10 @@ body.noscroll {
 #navMobile .icon,
 #navHeader .icon {
   background: #000;
+  width: 30px;
+  height: 30px;
+  padding: 0.1em;
+  font-size: 1.5em;
 }
 body > footer .icon {
   display: -webkit-inline-box;
@@ -2103,21 +2107,14 @@ body > footer h6 {
   }
 }
 div.gameboard {
-  display: inline-block;
+  display: block;
   position: relative;
-  margin: 0px auto;
-  border: 2px solid rgba(0,0,0,0.75);
-  -webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
-  border-radius: 12px;
+  margin: 4px auto;
+/*border: 2px solid rewhited
+    box-shadow: 0px 0px 30px 5px blackAlp75
+     border-radius: rBorderM*/
   padding: 0.8vw;
-}
-div.gameboard div.fluff {
-  border-style: double;
-  border-color: rgba(255,255,255,0.25);
-  border-width: 3px;
-  border-radius: 8px;
-  padding: 0.8vw;
+  background-color: rgba(255,255,255,0.1);
 }
 div.gameboard div.container {
   height: 75vh;
@@ -2151,8 +2148,8 @@ div.gameboard div.dashContain {
 }
 @media screen and (max-width: 750px) {
   div.gameboard div.container {
-    height: 85vw;
-    width: 85vw;
+    height: 94vw;
+    width: 94vw;
   }
 }
 @media screen and (min-width: 750px) and (max-width: 1100px) {
@@ -2776,6 +2773,8 @@ div.gameboard.g8x8 div.container > *:nth-child(64) {
     -ms-grid-column: 15;
 }
 div.gameboard.g10x1 div.dashContain {
+  height: 5vh;
+  width: 50vh;
   -ms-grid-columns: 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr 0 1fr;
   grid-template-columns: repeat(10, 1fr);
   -ms-grid-rows: 1fr;
@@ -2828,8 +2827,170 @@ div.gameboard div.dashContain > div.item {
   border-right: none;
   border-bottom: none;
   border-color: rgba(255,255,255,0.5);
-  padding: 4px;
+  padding: 2px;
   z-index: 1000;
+}
+div.gameboard.singleRow {
+  border: none;
+  border-radius: 0;
+  width: 96.4%;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+div.gameboard.singleRow div.dashContain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -o-box-lines: single;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: stretch;
+  -o-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  height: 6vh;
+  width: 100%;
+  border: none;
+}
+div.gameboard.singleRow div.dashContain div.item {
+  -webkit-box-flex: 0;
+  -o-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+  -ms-flex-preferred-size: 5vh;
+      flex-basis: 5vh;
+  border: none;
+  padding: 0;
+  text-align: center;
+}
+ul.playerDash div.dashContain div:nth-child(8) {
+  margin-left: auto;
+}
+ul.playerDash {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+ul.playerDash li {
+  font-size: 1em;
+  line-height: 1em;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+ul.playerDash li.drawerItem {
+  background-color: #000;
+}
+ul.playerDash li.drawerItem div.gameboard {
+  background: none;
+  padding-top: 0;
+}
+ul.playerDash li.drawerItem svg g.base rect.border {
+  display: none;
+}
+li.drawerItem div.itemHeader {
+  padding: 1.5vw 1.5vw 0.8vw 1.5vw;
+}
+div.itemHeader span.smallBox {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  border-radius: 4px;
+  font-weight: 500;
+  background-color: rgba(255,255,255,0.1);
+  display: inline-block;
+  padding: 0.8vw 1.5vw;
+  min-width: 35px;
+}
+div.itemHeader span.smallBox h6 {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  margin-left: 0.8vw;
+  top: -2px;
+  vertical-align: middle;
+  line-height: 0.7em;
+}
+div.itemHeader span.username {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+div.itemHeader.p1 span.username {
+  color: var(--pTheme1);
+}
+div.itemHeader.p2 span.username {
+  color: var(--pTheme2);
+}
+div.itemHeader.p3 span.username {
+  color: var(--pTheme3);
+}
+div.itemHeader.p4 span.username {
+  color: var(--pTheme4);
+}
+div.itemHeader span.rating {
+  font-size: 0.75em;
+}
+div.itemHeader span.flag.small {
+  width: 12px;
+}
+div.itemHeader a.openDetail {
+  text-decoration: none;
+  font-size: 1em;
+  line-height: 1em;
+  display: inline-block;
+  padding: 0.8vw 1.5vw;
+  position: relative;
+  margin-right: 0.8vw;
+  float: right;
+}
+svg.capturedArrows {
+  width: 15px;
+}
+svg.capturedArrows {
+  fill: #fff;
+}
+div.p1 svg.capturedArrows g.outline {
+  fill: var(--pTheme1);
+}
+div.p2 svg.capturedArrows g.outline {
+  fill: var(--pTheme2);
+}
+div.p3 svg.capturedArrows g.outline {
+  fill: var(--pTheme3);
+}
+div.p4 svg.capturedArrows g.outline {
+  fill: var(--pTheme4);
+}
+span.statusDots {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  line-height: 4px;
+  font-size: 4px;
+  padding: 0;
+  width: 60%;
+  left: 20%;
+  text-align: center;
+}
+span.statusDots span {
+  width: 4px;
+  height: 4px;
+  margin: 0 1px;
+  border-radius: 2px;
+  padding: 0;
+  display: inline-block;
+  background-color: rgba(255,255,255,0.9);
+}
+span.statusDots span.inactive {
+  background-color: rgba(255,255,255,0.25);
 }
 .darkMode {
   background: rgba(255,255,255,0.05);
@@ -2843,11 +3004,11 @@ div.gameboard div.dashContain > div.item {
   --pTheme1: #f00;
   --pTheme2: #00f;
   --pTheme3: #00b545;
-  --pTheme4: #ffd000;
+  --pTheme4: #eabf00;
   --pTheme1atck: #f00;
   --pTheme2atck: #00f;
   --pTheme3atck: #00b545;
-  --pTheme4atck: #ffd000;
+  --pTheme4atck: #eabf00;
   --selected: #fff;
 }
 svg.piece {
@@ -2859,17 +3020,19 @@ svg.piece {
           filter: none;
 }
 svg.piece g.base rect.fill {
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 svg.piece g.base rect.border {
   fill: none;
   stroke-miterlimit: 10;
   stroke-width: 2px;
-  opacity: 0.95;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
-  filter: alpha(opacity=95);
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 svg.piece g.pieceType {
   -webkit-transform-origin: inherit;
@@ -2890,6 +3053,16 @@ div.item.focus {
 }
 div.item.focus svg.piece g.base rect.border {
   stroke: #fff !important;
+}
+div.item.playable svg.piece g.base rect.fill {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+div.item.playable svg.piece g.base rect.border {
+  fill: rgba(255,255,255,0.25);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 .movement {
   -webkit-transition-duration: 750ms;
@@ -3002,6 +3175,7 @@ svg.piece g.shield path.shieldBorder {
 .p1 svg.piece g.shield path.shieldfront2,
 .p1 svg.piece g.eyeShdw path {
   fill: var(--pTheme1);
+  stroke: var(--pTheme1);
 }
 .p2 svg.piece g.shield path.shieldfront2,
 .p2 svg.piece g.eyeShdw path {
@@ -3017,42 +3191,26 @@ svg.piece g.shield path.shieldBorder {
 }
 svg.piece g.eye path {
   fill: #fff;
-  opacity: 0.75;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-  filter: alpha(opacity=75);
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
-.p4 svg.piece g.eye path {
-  fill: #333;
-  opacity: 0.75;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-  filter: alpha(opacity=75);
-}
-.p4 svg.piece g.eye path {
-  fill: #333;
-  opacity: 0.75;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-  filter: alpha(opacity=75);
-}
-.p4 svg.piece g.eye path {
-  fill: #333;
-  opacity: 0.75;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-  filter: alpha(opacity=75);
-}
-.p4 svg.piece g.eye path {
-  fill: #333;
-  opacity: 0.75;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-  filter: alpha(opacity=75);
+div.dashContain svg.piece g.eye path {
+  fill: #fff;
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 svg.piece g.hidden g.rings rect {
   fill: none;
   stroke: #fff;
   stroke-miterlimit: 10;
   stroke-width: 3px;
-  opacity: 0.2;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-  filter: alpha(opacity=20);
+  opacity: 0.25;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+  filter: alpha(opacity=25);
 }
 svg.piece g.hidden g.rings rect:first-child {
   opacity: 0.15;
@@ -3060,9 +3218,9 @@ svg.piece g.hidden g.rings rect:first-child {
   filter: alpha(opacity=15);
 }
 svg.piece g.hidden g.rings rect:last-child {
-  opacity: 0.25;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
-  filter: alpha(opacity=25);
+  opacity: 0.35;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+  filter: alpha(opacity=35);
 }
 div.item.hasHidden svg.piece g.pieceType path {
   fill: rgba(255,255,255,0.1);
@@ -3213,6 +3371,9 @@ span.isoSVG.x2 {
   margin-bottom: -4px;
   margin-left: 4px;
   margin-right: 4px;
+}
+svg.piece g.bonus {
+  fill: #fff;
 }
 @-webkit-keyframes pNavails {
   from {

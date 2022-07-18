@@ -4,21 +4,23 @@
 
 
 div.gameboard
-    display: inline-block
+    display: block
     position: relative
-    margin: 0px auto
-    border: 2px solid blackAlp75
+    margin: 4px auto
+    /*border: 2px solid rewhited
     box-shadow: 0px 0px 30px 5px blackAlp75
-    border-radius: rBorderM
+     border-radius: rBorderM*/
     padding: padXXS
+    background-color: whiteAlp10
 
+/*
 div.gameboard div.fluff
     border-style: double
     border-color: whiteAlp25
     border-width: 3px
     border-radius: rBorderStd
     padding: padXXS
-
+*/
 div.gameboard div.container
     height: 75vh
     width: 75vh
@@ -38,11 +40,11 @@ div.gameboard div.dashContain
     align-items: stretch
     border-right: 1px solid
     border-bottom: 1px solid
-    border-color: whiteAlp50    
+    border-color: whiteAlp50   
 @media phoneRule
     div.gameboard div.container
-        height: 85vw
-        width: 85vw
+        height: 94vw
+        width: 94vw
 @media tabletRule
     div.gameboard div.container
         height: 60vh
@@ -61,9 +63,10 @@ div.gameboard.g8x8 div.container
     grid-template-rows: repeat(8, 1fr)
 
 div.gameboard.g10x1 div.dashContain
+    height: 5vh
+    width: 50vh
     grid-template-columns: repeat(10, 1fr)
     grid-template-rows: repeat(1, 1fr)
-
 
 div.gameboard div.container > div.item,
 div.gameboard div.dashContain > div.item
@@ -72,8 +75,135 @@ div.gameboard div.dashContain > div.item
     border-right: none
     border-bottom: none
     border-color: whiteAlp50
-    padding: 4px
+    padding: 2px
     z-index: 1000
+
+div.gameboard.singleRow
+    border: none
+    border-radius: 0
+    width: 100% - (padStd*2)
+    box-shadow: none
+
+div.gameboard.singleRow div.dashContain
+    display: flex
+    flex-wrap: nowrap
+    justify-content: space-between
+    align-items: stretch
+    height: 6vh
+    width: 100%
+    border: none
+
+div.gameboard.singleRow div.dashContain div.item
+    flex-grow: 0
+    flex-basis: 5vh
+    border: none
+    padding: 0
+    text-align: center
+
+ul.playerDash div.dashContain div:nth-child(8)
+    margin-left: auto
+
+ul.playerDash
+    margin-top: 0
+    margin-bottom: 0
+    padding-left: 0
+ul.playerDash li
+    font-size: 1em
+    line-height: 1em
+    margin-bottom: 0
+    list-style-type: none
+ul.playerDash li.drawerItem
+    background-color: black
+ul.playerDash li.drawerItem div.gameboard
+    background: none
+    padding-top: 0
+ul.playerDash li.drawerItem svg g.base rect.border
+    display: none
+
+li.drawerItem div.itemHeader
+    padding: padXS padXS padXXS padXS  
+
+div.itemHeader span.smallBox
+    font-size: 0.7em
+    line-height: 0.7em
+    border-radius: 4px
+    font-weight: 500
+    background-color: whiteAlp10
+    display: inline-block
+    padding: padXXS padXS
+    min-width: 35px
+div.itemHeader span.smallBox h6
+    display: inline-block
+    position: relative
+    margin: 0
+    margin-left: marXXS
+    top:-2px
+    vertical-align: middle
+    line-height: 0.7em 
+div.itemHeader span.username
+    font-size: 0.9em
+    font-weight: 500
+div.itemHeader.p1 span.username
+    color: var(--pTheme1)
+div.itemHeader.p2 span.username
+    color: var(--pTheme2)
+div.itemHeader.p3 span.username
+    color: var(--pTheme3)
+div.itemHeader.p4 span.username
+    color: var(--pTheme4)
+div.itemHeader span.rating
+    font-size: 0.75em
+div.itemHeader span.flag.small
+    width: 12px
+div.itemHeader a.openDetail
+    text-decoration: none
+    font-size: 1em
+    line-height: 1em
+    display: inline-block
+    padding: padXXS padXS
+    position relative
+    margin-right: marXXS
+    float: right
+
+svg.capturedArrows
+    width:15px;
+svg.capturedArrows
+    fill: white
+div.p1 svg.capturedArrows g.outline
+    fill: var(--pTheme1)
+div.p2 svg.capturedArrows g.outline
+    fill: var(--pTheme2)
+div.p3 svg.capturedArrows g.outline
+    fill: var(--pTheme3)
+div.p4 svg.capturedArrows g.outline
+    fill: var(--pTheme4)
+
+span.statusDots 
+    display: block
+    position: absolute
+    bottom: 0
+    height: 4px
+    line-height: 4px
+    font-size: 4px
+    padding:0
+    width: 60%
+    left:20%
+    text-align: center
+span.statusDots span
+    width: 4px
+    height: 4px
+    margin: 0 1px
+    border-radius: 2px
+    padding: 0
+    display: inline-block
+    background-color: whiteAlp90
+span.statusDots span.inactive
+    background-color: whiteAlp25
+
+
+
+
+
 
 
 /* darkMode */
@@ -94,11 +224,11 @@ div.gameboard div.dashContain > div.item
      --pTheme1:rgba(255,0,0,1.0);
     --pTheme2:rgba(0,0,255,1.0);
     --pTheme3:rgba(0,181,69,1.0);
-    --pTheme4:rgba(255,208,0,1.0);
+    --pTheme4:rgba(234,191,0,1.0);
     --pTheme1atck:rgba(255,0,0,1.0);
     --pTheme2atck:rgba(0,0,255,1.0);
     --pTheme3atck:rgba(0,181,69,1.0);
-    --pTheme4atck:rgba(255,208,0,1.0);
+    --pTheme4atck:rgba(234,191,0,1.0);
     --selected:rgba(255,255,255,1.0);
 
  
@@ -110,14 +240,14 @@ svg.piece  {
     opacity:1.0;
 }
 svg.piece g.base rect.fill {
-    opacity:0.8;
+    opacity:1.0;
     //mix-blend-mode: color-dodge;
 }
 svg.piece g.base rect.border {
     fill: none;
     stroke-miterlimit: 10;
     stroke-width: 2px;
-    opacity:0.95;
+    opacity:1;
 }
 svg.piece g.pieceType {
     transform-origin: inherit;
@@ -139,6 +269,11 @@ div.item.focus {
 div.item.focus svg.piece g.base rect.border {
     stroke: white !important;
 }
+div.item.playable svg.piece g.base rect.fill
+    opacity: 0
+div.item.playable svg.piece g.base rect.border
+    fill: whiteAlp25
+    transition: 0.2s
 
 
 
@@ -261,7 +396,7 @@ svg.piece g.shield path.shieldBorder {
 .p1 svg.piece g.shield path.shieldfront2,
 .p1 svg.piece g.eyeShdw path {
     fill: var(--pTheme1);
-    //stroke: var(--pTheme1);
+    stroke: var(--pTheme1);
 }
 .p2 svg.piece g.shield path.shieldfront2,
 .p2 svg.piece g.eyeShdw path {
@@ -280,9 +415,13 @@ svg.piece g.shield path.shieldBorder {
 }
 svg.piece g.eye path {
     fill: #fff;
-    opacity: 0.75;
+    opacity: 1;
 }
-
+div.dashContain svg.piece g.eye path {
+    fill: #fff;
+    opacity: 1;
+}
+/*
 .p4 svg.piece g.eye path {
     fill: #333;
     opacity: 0.75;
@@ -301,7 +440,7 @@ svg.piece g.eye path {
 .p4 svg.piece g.eye path {
     fill: #333;
     opacity: 0.75;
-}  
+}*/  
 
 
 
@@ -311,13 +450,13 @@ svg.piece g.hidden g.rings rect {
     stroke: #fff;
     stroke-miterlimit: 10;
     stroke-width: 3px;
-    opacity: 0.2;
+    opacity: 0.25;
 }
 svg.piece g.hidden g.rings rect:first-child {
     opacity: 0.15;
 }
 svg.piece g.hidden g.rings rect:last-child {
-    opacity: 0.25;
+    opacity: 0.35;
 }
 
 
@@ -480,4 +619,9 @@ span.isoSVG.x2
     margin-bottom: -4px
     margin-left: 4px
     margin-right: 4px
+
+
+/* bonus piece */
+svg.piece g.bonus 
+    fill: white
 
