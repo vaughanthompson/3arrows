@@ -1,6 +1,7 @@
 //core layout
 main
     background-color: blackAlp50
+    min-height: 100vh
 body footer
     border-top: 1px solid whiteAlp25
     background-color: blackAlp50
@@ -468,19 +469,36 @@ div.mblnavContainer
 div.containMNav
     padding: padXL padXL
 div.containMNav > *
-    margin-bottom: marXL
+    text-align: center
 div.containMNav nav
     display: flex
     flex-direction: column
+    margin:  0 0 marL
 div.containMNav nav a
-    padding: padM*1.5 padM 
+    padding: padM*1.25 padM 
     line-height: 130%
-    margin: 1px 0
-    background-color: rgba(0,0,0,0.05)
+    margin: 3px 0
+    border-radius: 4px
+    background-color: rgba(0,0,0,0.8)
 div.containMNav h6
     font-size: 1em
     margin-top: marStd
     margin-bottom: marL
+div.containMNav a.alert
+    color: bad
+
+div.containMNav div.minorLinks, 
+div.containMNav div.social 
+    margin: marM 0 marXL 0
+div.containMNav div.minorLinks
+    padding: 0 padL
+
+div.containMNav div.minorLinks a
+    margin: marXXS
+    padding: padXS
+    line-height: 1.4em
+    white-space: nowrap
+    display: inline-block
 
 /* @media mtrigger
     html.noscroll 
@@ -496,3 +514,22 @@ body.noscroll
     height: 100%   
 
 
+
+
+/* lobby */
+body.lobby > header
+    text-align: center
+    padding: padL padL
+body.lobby > header > *
+    margin: 0
+body.lobby > header > .name
+    margin-bottom: 0.2em
+body.lobby > header > div.gameCTAs
+    margin-top: 1em
+    margin-bottom: marXS
+div.lobbyDiv
+    padding: padL padM
+    margin-bottom: marM
+div.lobbyDiv div.flexRow
+    display: flex
+    justify-content: space-between

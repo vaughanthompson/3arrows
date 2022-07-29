@@ -7,11 +7,10 @@ div.gameboard
     display: block
     position: relative
     margin: 4px auto
+    text-align: center
     /*border: 2px solid rewhited
     box-shadow: 0px 0px 30px 5px blackAlp75
      border-radius: rBorderM*/
-    padding: padXXS
-    background-color: whiteAlp10
 
 /*
 div.gameboard div.fluff
@@ -21,6 +20,12 @@ div.gameboard div.fluff
     border-radius: rBorderStd
     padding: padXXS
 */
+
+div.gameboard div.fluff
+    display: inline-block
+    padding: padXXS
+    background-color: whiteAlp10
+    
 div.gameboard div.container
     height: 75vh
     width: 75vh
@@ -31,6 +36,7 @@ div.gameboard div.container
     border-right: 1px solid
     border-bottom: 1px solid
     border-color: whiteAlp50
+
 div.gameboard div.dashContain
     height: 7.5vh
     width: 75vh
@@ -81,8 +87,9 @@ div.gameboard div.dashContain > div.item
 div.gameboard.singleRow
     border: none
     border-radius: 0
-    width: 100% - (padStd*2)
+    width: 96%
     box-shadow: none
+    margin: 0 2%
 
 div.gameboard.singleRow div.dashContain
     display: flex
@@ -100,9 +107,14 @@ div.gameboard.singleRow div.dashContain div.item
     padding: 0
     text-align: center
 
+
+
+
+
+
+
 ul.playerDash div.dashContain div:nth-child(8)
     margin-left: auto
-
 ul.playerDash
     margin-top: 0
     margin-bottom: 0
@@ -114,14 +126,17 @@ ul.playerDash li
     list-style-type: none
 ul.playerDash li.drawerItem
     background-color: black
+    padding-bottom: 4px
+    margin-bottom: 4px
 ul.playerDash li.drawerItem div.gameboard
     background: none
     padding-top: 0
-ul.playerDash li.drawerItem svg g.base rect.border
-    display: none
 
 li.drawerItem div.itemHeader
-    padding: padXS padXS padXXS padXS  
+    padding: 4px 4px 2px 4px
+    display:flex
+    align-items: flex-end
+    justify-content: space-between  
 
 div.itemHeader span.smallBox
     font-size: 0.7em
@@ -130,26 +145,40 @@ div.itemHeader span.smallBox
     font-weight: 500
     background-color: whiteAlp10
     display: inline-block
-    padding: padXXS padXS
+    padding: 8px 10px 5px 10px
     min-width: 35px
+    margin-right:5px
 div.itemHeader span.smallBox h6
     display: inline-block
     position: relative
     margin: 0
-    margin-left: marXXS
+    margin-left: 5px
     top:-2px
     vertical-align: middle
+    font-size: 0.7em
     line-height: 0.7em 
+div.itemHeader span.timeRemain h6
+    display: inline-block
+    position: relative
+    margin: 0
+    vertical-align: middle
+    font-size: 0.7em
+    line-height: 0.7em
+    margin-left: 3px 
 div.itemHeader span.username
     font-size: 0.9em
     font-weight: 500
-div.itemHeader.p1 span.username
+div.itemHeader.p1 span.username,
+div.itemHeader.p1 span.timeRemain h6
     color: var(--pTheme1)
-div.itemHeader.p2 span.username
+div.itemHeader.p2 span.username,
+div.itemHeader.p2 span.timeRemain h6
     color: var(--pTheme2)
-div.itemHeader.p3 span.username
+div.itemHeader.p3 span.username,
+div.itemHeader.p3 span.timeRemain h6
     color: var(--pTheme3)
-div.itemHeader.p4 span.username
+div.itemHeader.p4 span.username,
+div.itemHeader.p4 span.timeRemain h6
     color: var(--pTheme4)
 div.itemHeader span.rating
     font-size: 0.75em
@@ -163,7 +192,12 @@ div.itemHeader a.openDetail
     padding: padXXS padXS
     position relative
     margin-right: marXXS
-    float: right
+span.timeRemain
+    display: inline-block
+    vertical-align: middle
+span.timeRemain svg.indicator 
+    width:11px
+    fill: white
 
 svg.capturedArrows
     width:15px;
@@ -181,7 +215,7 @@ div.p4 svg.capturedArrows g.outline
 span.statusDots 
     display: block
     position: absolute
-    bottom: 0
+    bottom: 2px
     height: 4px
     line-height: 4px
     font-size: 4px
@@ -200,7 +234,13 @@ span.statusDots span
 span.statusDots span.inactive
     background-color: whiteAlp25
 
-
+div.opponentDrawer div.itemDetail
+    display: none
+@media ttrigger
+    div.opponentDrawer div.itemDetail
+        display: block
+    div.itemHeader a.openDetail
+        display: none
 
 
 
@@ -222,17 +262,14 @@ span.statusDots span.inactive
     --startPosS: 180deg;
     --startPosW: 270deg;
      --pTheme1:rgba(255,0,0,1.0);
-    --pTheme2:rgba(0,0,255,1.0);
+    --pTheme2:rgba(0,92,255,1.0);
     --pTheme3:rgba(0,181,69,1.0);
     --pTheme4:rgba(234,191,0,1.0);
     --pTheme1atck:rgba(255,0,0,1.0);
-    --pTheme2atck:rgba(0,0,255,1.0);
+    --pTheme2atck:rgba(0,92,255,1.0);
     --pTheme3atck:rgba(0,181,69,1.0);
     --pTheme4atck:rgba(234,191,0,1.0);
     --selected:rgba(255,255,255,1.0);
-
- 
-
 }
 svg.piece  {
     position:absolute;
@@ -262,20 +299,55 @@ svg.piece g.pieceType polyline {
     stroke-miterlimit: 10;
     stroke-width: 2px
 }
+ul.playerDash li.drawerItem svg g.base rect.border
+    opacity:0
 
-div.item.focus {
+div.item.focus 
     z-index: 5000;
-}
-div.item.focus svg.piece g.base rect.border {
+ul.playerDash div.item.focus svg.piece
+    transform: scale(115%)
+div.item.focus svg.piece g.base rect.border
     stroke: white !important;
-}
-div.item.playable svg.piece g.base rect.fill
+    opacity: 1.0
+
+div.boardContain div.item svg.piece 
+    opacity:0
+div.boardContain div.item.p1 svg.piece,
+div.boardContain div.item.p2 svg.piece,
+div.boardContain div.item.p3 svg.piece,
+div.boardContain div.item.p4 svg.piece, 
+div.boardContain div.item.playable svg.piece 
+    opacity:1
+div.boardContain div.item.playable svg.piece g.base rect.fill
     opacity: 0
-div.item.playable svg.piece g.base rect.border
+div.boardContain div.item.playable svg.piece g.base rect.border
     fill: whiteAlp25
     transition: 0.2s
 
-
+div.boardContain div.item span.coords 
+    display: inline-block
+    background-color: whiteAlp25
+    color: black
+    text-transform: uppercase
+    position: absolute
+    left:0
+    top:0
+    font-weight:600
+    font-size: 9px
+    line-height:8px
+    margin:0
+    padding: 1px 1px 0 1px 
+    z-index: 1
+div.boardContain div.item span.coords.flash
+    background-color: whiteAlp75
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: 3;
+    animation-iteration-count: 3;
+div.boardContain div.gameboard.hideCoords span.coords
+    display: none
 
 
 /* default transition time animation */

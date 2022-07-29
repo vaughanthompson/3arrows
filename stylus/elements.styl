@@ -44,13 +44,14 @@ body > footer .icon
     padding: 0
 // ctas
 a.majorCTA,
+a.minorCTA,
 a.ctaButton,
 input[type=submit]
     color: white
     background-color: material
     border: 1px solid material
     padding: 14px 20px 9px 20px
-    margin-bottom: 1em
+    margin-bottom: marXS
     display: inline-block
     white-space: nowrap
     border-radius: 8px
@@ -60,14 +61,28 @@ input[type=submit]
     text-decoration: none
 input[type=submit]
     margin-bottom: 0
-div#masthead a.majorCTA
-    color: white !important
+a.majorCTA
+    background-color: bad
+    border-color: bad
+a.minorCTA
+    background: none
+    border-color: white
 a.ctaButton i
     margin-left:15px 
     margin-right:10px;
     transition: 0.2s 
 a.ctaButton i:before
     color: brand1
+
+@media phoneRule
+   a.majorCTA,
+   a.minorCTA,
+   a.ctaButton,
+   input[type=submit]
+        padding: 12px 15px 10px 15px
+        border-radius: 6px
+        font-size: 0.7em
+        line-height: 100%
 
 #priNav a.majorCTA
     text-shadow: 0px 1px 2px halfDark    
@@ -80,7 +95,9 @@ div.cta > div > h6
 @media (pointer: fine)
     input[type=submit]:hover,
     a.ctaButton:hover,
-    a.ctaButton:hover > i:before
+    a.ctaButton:hover > i:before,
+    a.majorCTA:hover,
+    a.majorCTA:hover > i:before
         color: white
         border-color: white
         background: none
@@ -150,7 +167,7 @@ h2 span.flag
     width:37px
     margin: 0 10px 3px
 h3 span.flag
-    width:30px
+    width:23px
     margin: 0 10px 3px
 h4 span.flag
     width:25px
@@ -165,6 +182,9 @@ p span.flag
     width:18px
     margin: 0 6px 1px
 
+@media phoneRule
+    span.flag.small
+        width: 12px
 
 
 .grid-clients
@@ -559,7 +579,6 @@ table.list tbody td
     font-weight: 500
 div.fixedHeightTable
     max-height: 30vh
-    margin: marXS 0
     overflow: auto
 div.fixedHeightTable table
     margin: 0
@@ -575,10 +594,24 @@ div.fixedHeightTable th
 tr.player
     color: material
 
+@media phoneRule
+    table.list th
+        padding: padXXS padXXS*0.6 padXXS*0.8
+        margin: 0
+        font-size:0.7em
+    table.list thead th
+        padding-bottom: padXS
+        border-bottom: 1px solid white
+    table.list tbody td
+        font-size:0.8em
+        padding: padXS
+
 
 // lozenge filter
 ul.lozengeFilter
     padding: 0
+body.lobby ul.lozengeFilter
+    margin: 0
 ul.lozengeFilter li
     display: inline-block
     list-style-type: none
@@ -589,7 +622,7 @@ ul.lozengeFilter li a
     display: inline-block
     text-decoration: none
     background-color: whiteAlp10
-    padding: padXS*0.5 padXS padXXS*0.6 padXS
+    padding: 9px 20px 6px 20px
     line-height: 1em
     font-size: 0.9em
     text-underline-offset: 0px
@@ -598,3 +631,9 @@ ul.lozengeFilter li a
 ul.lozengeFilter li a.active
     background-color: whiteAlp50
     font-weight: 700
+
+@media phoneRule
+    ul.lozengeFilter li a
+        padding: 9px 12px 6px 12px
+        line-height: 0.7em
+        font-size: 0.7em

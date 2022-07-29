@@ -128,6 +128,7 @@ hr.alt {
 }
 main {
   background-color: rgba(0,0,0,0.5);
+  min-height: 100vh;
 }
 body footer {
   border-top: 1px solid rgba(255,255,255,0.25);
@@ -949,7 +950,7 @@ div.containMNav {
   padding: 7vw 7vw;
 }
 div.containMNav > * {
-  margin-bottom: 10vw;
+  text-align: center;
 }
 div.containMNav nav {
   display: -webkit-box;
@@ -960,17 +961,36 @@ div.containMNav nav {
   -o-box-orient: vertical;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0 0 5vw;
 }
 div.containMNav nav a {
-  padding: 4.5vw 3vw;
+  padding: 3.75vw 3vw;
   line-height: 130%;
-  margin: 1px 0;
-  background-color: rgba(0,0,0,0.05);
+  margin: 3px 0;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.8);
 }
 div.containMNav h6 {
   font-size: 1em;
   margin-top: 1.8vw;
   margin-bottom: 5vw;
+}
+div.containMNav a.alert {
+  color: #f00;
+}
+div.containMNav div.minorLinks,
+div.containMNav div.social {
+  margin: 3vw 0 10vw 0;
+}
+div.containMNav div.minorLinks {
+  padding: 0 5vw;
+}
+div.containMNav div.minorLinks a {
+  margin: 0.8vw;
+  padding: 1.5vw;
+  line-height: 1.4em;
+  white-space: nowrap;
+  display: inline-block;
 }
 html.noscroll {
   overflow: hidden;
@@ -978,6 +998,34 @@ html.noscroll {
 body.noscroll {
   overflow: visible;
   height: 100%;
+}
+body.lobby > header {
+  text-align: center;
+  padding: 5vw 5vw;
+}
+body.lobby > header > * {
+  margin: 0;
+}
+body.lobby > header > .name {
+  margin-bottom: 0.2em;
+}
+body.lobby > header > div.gameCTAs {
+  margin-top: 1em;
+  margin-bottom: 1.5vw;
+}
+div.lobbyDiv {
+  padding: 5vw 3vw;
+  margin-bottom: 3vw;
+}
+div.lobbyDiv div.flexRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .icon {
   background-color: #333;
@@ -1043,13 +1091,14 @@ body > footer .icon {
   padding: 0;
 }
 a.majorCTA,
+a.minorCTA,
 a.ctaButton,
 input[type=submit] {
   color: #fff;
   background-color: #29abe2;
   border: 1px solid #29abe2;
   padding: 14px 20px 9px 20px;
-  margin-bottom: 1em;
+  margin-bottom: 1.5vw;
   display: inline-block;
   white-space: nowrap;
   border-radius: 8px;
@@ -1061,8 +1110,13 @@ input[type=submit] {
 input[type=submit] {
   margin-bottom: 0;
 }
-div#masthead a.majorCTA {
-  color: #fff !important;
+a.majorCTA {
+  background-color: #f00;
+  border-color: #f00;
+}
+a.minorCTA {
+  background: none;
+  border-color: #fff;
 }
 a.ctaButton i {
   margin-left: 15px;
@@ -1072,6 +1126,17 @@ a.ctaButton i {
 }
 a.ctaButton i:before {
   color: #333;
+}
+@media screen and (max-width: 750px) {
+  a.majorCTA,
+  a.minorCTA,
+  a.ctaButton,
+  input[type=submit] {
+    padding: 12px 15px 10px 15px;
+    border-radius: 6px;
+    font-size: 0.7em;
+    line-height: 100%;
+  }
 }
 #priNav a.majorCTA {
   text-shadow: 0px 1px 2px rgba(0,0,0,0.45);
@@ -1087,7 +1152,9 @@ div.cta > div > h6 {
 @media (pointer: fine) {
   input[type=submit]:hover,
   a.ctaButton:hover,
-  a.ctaButton:hover > i:before {
+  a.ctaButton:hover > i:before,
+  a.majorCTA:hover,
+  a.majorCTA:hover > i:before {
     color: #fff;
     border-color: #fff;
     background: none;
@@ -1186,7 +1253,7 @@ h2 span.flag {
   margin: 0 10px 3px;
 }
 h3 span.flag {
-  width: 30px;
+  width: 23px;
   margin: 0 10px 3px;
 }
 h4 span.flag {
@@ -1204,6 +1271,11 @@ h6 span.flag {
 p span.flag {
   width: 18px;
   margin: 0 6px 1px;
+}
+@media screen and (max-width: 750px) {
+  span.flag.small {
+    width: 12px;
+  }
 }
 .grid-clients {
   display: -ms-grid;
@@ -1771,7 +1843,6 @@ table.list tbody td {
 }
 div.fixedHeightTable {
   max-height: 30vh;
-  margin: 1.5vw 0;
   overflow: auto;
 }
 div.fixedHeightTable table {
@@ -1789,8 +1860,26 @@ div.fixedHeightTable th {
 tr.player {
   color: #29abe2;
 }
+@media screen and (max-width: 750px) {
+  table.list th {
+    padding: 0.8vw 0.48vw 0.64vw;
+    margin: 0;
+    font-size: 0.7em;
+  }
+  table.list thead th {
+    padding-bottom: 1.5vw;
+    border-bottom: 1px solid #fff;
+  }
+  table.list tbody td {
+    font-size: 0.8em;
+    padding: 1.5vw;
+  }
+}
 ul.lozengeFilter {
   padding: 0;
+}
+body.lobby ul.lozengeFilter {
+  margin: 0;
 }
 ul.lozengeFilter li {
   display: inline-block;
@@ -1802,7 +1891,7 @@ ul.lozengeFilter li a {
   display: inline-block;
   text-decoration: none;
   background-color: rgba(255,255,255,0.1);
-  padding: 0.75vw 1.5vw 0.48vw 1.5vw;
+  padding: 9px 20px 6px 20px;
   line-height: 1em;
   font-size: 0.9em;
   text-underline-offset: 0px;
@@ -1811,6 +1900,13 @@ ul.lozengeFilter li a {
 ul.lozengeFilter li a.active {
   background-color: rgba(255,255,255,0.5);
   font-weight: 700;
+}
+@media screen and (max-width: 750px) {
+  ul.lozengeFilter li a {
+    padding: 9px 12px 6px 12px;
+    line-height: 0.7em;
+    font-size: 0.7em;
+  }
 }
 a:link,
 a:visited {
@@ -2078,7 +2174,7 @@ body > footer h6 {
     line-height: 110%;
   }
   h3 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     line-height: 110%;
   }
   h4 {
@@ -2106,13 +2202,23 @@ body > footer h6 {
     margin-bottom: 0.5em;
   }
 }
+@media screen and (max-width: 750px) {
+  div.lobbyDiv h3 {
+    font-size: 1em;
+    line-height: 110%;
+  }
+}
 div.gameboard {
   display: block;
   position: relative;
   margin: 4px auto;
+  text-align: center;
 /*border: 2px solid rewhited
     box-shadow: 0px 0px 30px 5px blackAlp75
      border-radius: rBorderM*/
+}
+div.gameboard div.fluff {
+  display: inline-block;
   padding: 0.8vw;
   background-color: rgba(255,255,255,0.1);
 }
@@ -2833,9 +2939,10 @@ div.gameboard div.dashContain > div.item {
 div.gameboard.singleRow {
   border: none;
   border-radius: 0;
-  width: 96.4%;
+  width: 96%;
   -webkit-box-shadow: none;
   box-shadow: none;
+  margin: 0 2%;
 }
 div.gameboard.singleRow div.dashContain {
   display: -webkit-box;
@@ -2888,16 +2995,27 @@ ul.playerDash li {
 }
 ul.playerDash li.drawerItem {
   background-color: #000;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
 }
 ul.playerDash li.drawerItem div.gameboard {
   background: none;
   padding-top: 0;
 }
-ul.playerDash li.drawerItem svg g.base rect.border {
-  display: none;
-}
 li.drawerItem div.itemHeader {
-  padding: 1.5vw 1.5vw 0.8vw 1.5vw;
+  padding: 4px 4px 2px 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: end;
+  -o-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 div.itemHeader span.smallBox {
   font-size: 0.7em;
@@ -2906,32 +3024,47 @@ div.itemHeader span.smallBox {
   font-weight: 500;
   background-color: rgba(255,255,255,0.1);
   display: inline-block;
-  padding: 0.8vw 1.5vw;
+  padding: 8px 10px 5px 10px;
   min-width: 35px;
+  margin-right: 5px;
 }
 div.itemHeader span.smallBox h6 {
   display: inline-block;
   position: relative;
   margin: 0;
-  margin-left: 0.8vw;
+  margin-left: 5px;
   top: -2px;
   vertical-align: middle;
+  font-size: 0.7em;
   line-height: 0.7em;
+}
+div.itemHeader span.timeRemain h6 {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 0.7em;
+  line-height: 0.7em;
+  margin-left: 3px;
 }
 div.itemHeader span.username {
   font-size: 0.9em;
   font-weight: 500;
 }
-div.itemHeader.p1 span.username {
+div.itemHeader.p1 span.username,
+div.itemHeader.p1 span.timeRemain h6 {
   color: var(--pTheme1);
 }
-div.itemHeader.p2 span.username {
+div.itemHeader.p2 span.username,
+div.itemHeader.p2 span.timeRemain h6 {
   color: var(--pTheme2);
 }
-div.itemHeader.p3 span.username {
+div.itemHeader.p3 span.username,
+div.itemHeader.p3 span.timeRemain h6 {
   color: var(--pTheme3);
 }
-div.itemHeader.p4 span.username {
+div.itemHeader.p4 span.username,
+div.itemHeader.p4 span.timeRemain h6 {
   color: var(--pTheme4);
 }
 div.itemHeader span.rating {
@@ -2948,7 +3081,14 @@ div.itemHeader a.openDetail {
   padding: 0.8vw 1.5vw;
   position: relative;
   margin-right: 0.8vw;
-  float: right;
+}
+span.timeRemain {
+  display: inline-block;
+  vertical-align: middle;
+}
+span.timeRemain svg.indicator {
+  width: 11px;
+  fill: #fff;
 }
 svg.capturedArrows {
   width: 15px;
@@ -2971,7 +3111,7 @@ div.p4 svg.capturedArrows g.outline {
 span.statusDots {
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: 2px;
   height: 4px;
   line-height: 4px;
   font-size: 4px;
@@ -2992,6 +3132,17 @@ span.statusDots span {
 span.statusDots span.inactive {
   background-color: rgba(255,255,255,0.25);
 }
+div.opponentDrawer div.itemDetail {
+  display: none;
+}
+@media screen and (min-width: 750px) {
+  div.opponentDrawer div.itemDetail {
+    display: block;
+  }
+  div.itemHeader a.openDetail {
+    display: none;
+  }
+}
 .darkMode {
   background: rgba(255,255,255,0.05);
 }
@@ -3002,11 +3153,11 @@ span.statusDots span.inactive {
   --startPosS: 180deg;
   --startPosW: 270deg;
   --pTheme1: #f00;
-  --pTheme2: #00f;
+  --pTheme2: #005cff;
   --pTheme3: #00b545;
   --pTheme4: #eabf00;
   --pTheme1atck: #f00;
-  --pTheme2atck: #00f;
+  --pTheme2atck: #005cff;
   --pTheme3atck: #00b545;
   --pTheme4atck: #eabf00;
   --selected: #fff;
@@ -3048,21 +3199,79 @@ svg.piece g.pieceType polyline {
   stroke-miterlimit: 10;
   stroke-width: 2px;
 }
-div.item.focus {
-  z-index: 5000;
-}
-div.item.focus svg.piece g.base rect.border {
-  stroke: #fff !important;
-}
-div.item.playable svg.piece g.base rect.fill {
+ul.playerDash li.drawerItem svg g.base rect.border {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
-div.item.playable svg.piece g.base rect.border {
+div.item.focus {
+  z-index: 5000;
+}
+ul.playerDash div.item.focus svg.piece {
+  -webkit-transform: scale(115%);
+  transform: scale(115%);
+}
+div.item.focus svg.piece g.base rect.border {
+  stroke: #fff !important;
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+div.boardContain div.item svg.piece {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+div.boardContain div.item.p1 svg.piece,
+div.boardContain div.item.p2 svg.piece,
+div.boardContain div.item.p3 svg.piece,
+div.boardContain div.item.p4 svg.piece,
+div.boardContain div.item.playable svg.piece {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+div.boardContain div.item.playable svg.piece g.base rect.fill {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+div.boardContain div.item.playable svg.piece g.base rect.border {
   fill: rgba(255,255,255,0.25);
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+div.boardContain div.item span.coords {
+  display: inline-block;
+  background-color: rgba(255,255,255,0.25);
+  color: #000;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 8px;
+  margin: 0;
+  padding: 1px 1px 0 1px;
+  z-index: 1;
+}
+div.boardContain div.item span.coords.flash {
+  background-color: rgba(255,255,255,0.75);
+  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3;
+}
+div.boardContain div.gameboard.hideCoords span.coords {
+  display: none;
 }
 .movement {
   -webkit-transition-duration: 750ms;
