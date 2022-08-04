@@ -2933,7 +2933,7 @@ div.gameboard div.dashContain > div.item {
   border-right: none;
   border-bottom: none;
   border-color: rgba(255,255,255,0.5);
-  padding: 2px;
+  padding: 0px;
   z-index: 1000;
 }
 div.gameboard.singleRow {
@@ -3134,6 +3134,9 @@ span.statusDots span.inactive {
 }
 div.opponentDrawer div.itemDetail {
   display: none;
+}
+div.opponentDrawer div.itemDetail.active {
+  display: block;
 }
 @media screen and (min-width: 750px) {
   div.opponentDrawer div.itemDetail {
