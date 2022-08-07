@@ -265,11 +265,11 @@ article.grid.side-by-side section > div:last-child {
 article > header {
   padding: 3vw;
 }
-body.mktng > main {
+main.mktng {
   padding-top: 1.8vw;
 }
-body.mktng > main > header,
-body.mktng > main > article {
+main.mktng > header,
+main.mktng > article {
   padding-top: 5vw;
   padding-bottom: 1.8vw;
 }
@@ -999,17 +999,17 @@ body.noscroll {
   overflow: visible;
   height: 100%;
 }
-body.lobby > header {
+header.lobby {
   text-align: center;
   padding: 5vw 5vw;
 }
-body.lobby > header > * {
+header.lobby > * {
   margin: 0;
 }
-body.lobby > header > .name {
+header.lobby > .name {
   margin-bottom: 0.2em;
 }
-body.lobby > header > div.gameCTAs {
+header.lobby > div.gameCTAs {
   margin-top: 1em;
   margin-bottom: 1.5vw;
 }
@@ -1722,7 +1722,7 @@ ul.featureList li strong {
 div.outer {
   background-color: #000;
 }
-body.mktng span.controlSlider {
+span.controlSlider {
   display: block;
   position: relative;
   width: 25vw;
@@ -1746,11 +1746,11 @@ div.videoContent {
 div.videoContent div#vidHolder video {
   border-radius: 2vw;
 }
-body.mktng span.controlSlider .owl-theme-slider1 .owl-item,
-body.mktng span.controlSlider .owl-theme-slider1 div.item {
+span.controlSlider .owl-theme-slider1 .owl-item,
+span.controlSlider .owl-theme-slider1 div.item {
   height: 50vw;
 }
-body.mktng span.controlSlider .owl-theme-slider1 div.item {
+span.controlSlider .owl-theme-slider1 div.item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: box;
@@ -1878,7 +1878,7 @@ tr.player {
 ul.lozengeFilter {
   padding: 0;
 }
-body.lobby ul.lozengeFilter {
+div.lobbyDiv ul.lozengeFilter {
   margin: 0;
 }
 ul.lozengeFilter li {
