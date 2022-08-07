@@ -144,10 +144,10 @@ body footer {
   div#priNav-v2,
   div#priNav,
   div#secNav,
-  body > footer,
+  footer.siteWide,
   div#carouselIndicator,
   div#slideNav,
-  body > div.owl-theme div.contentHdr {
+  div.owl-theme.mktngSlider div.contentHdr {
     padding-left: 7.5vw;
     padding-right: 7.5vw;
   }
@@ -348,8 +348,8 @@ div.content.cE {
 }
 @media screen and (max-width: 750px) {
   main,
-  body > footer,
-  body > div.owl-theme div.contentHdr {
+  footer.siteWide,
+  div.owl-theme.mktngSlider div.contentHdr {
     padding: 1.8vw;
   }
   div.content section > div {
@@ -631,28 +631,28 @@ div.content.cE {
     flex-direction: row-reverse;
   }
 }
-body > footer section {
+footer.siteWide section {
   padding: 5vw;
 }
-body > footer section > a {
+footer.siteWide section > a {
   display: inline-block;
   margin-bottom: 0.75em;
   text-decoration: underline;
 }
 @media screen and (max-width: 750px) {
-  body > footer {
+  footer.siteWide {
     border-top: none;
   }
-  body > footer section {
+  footer.siteWide section {
     text-align: center;
     border-top: 4px solid #333;
   }
-  body > footer img.logo {
+  footer.siteWide img.logo {
     margin: 2em auto;
     width: 30vw !important;
   }
-  body > footer p,
-  body > footer a {
+  footer.siteWide p,
+  footer.siteWide a {
     max-width: 75%;
     margin: 1em auto;
     font-size: 1em !important;
@@ -660,22 +660,22 @@ body > footer section > a {
   }
 }
 @media screen and (min-width: 750px) {
-  body > footer section:last-child {
+  footer.siteWide section:last-child {
     border-top: 4px solid #333;
   }
-  body > footer img.logo {
+  footer.siteWide img.logo {
     margin-bottom: 2em;
   }
-  body > footer p,
-  body > footer a {
+  footer.siteWide p,
+  footer.siteWide a {
     max-width: 90%;
   }
 }
 @media screen and (min-width: 1100px) {
-  body > footer section {
+  footer.siteWide section {
     padding: 0 1.8vw;
   }
-  body > footer {
+  footer.siteWide {
     display: -webkit-box;
     display: -ms-flexbox;
     display: box;
@@ -692,15 +692,15 @@ body > footer section > a {
     -moz-column-gap: 5vw;
     column-gap: 5vw;
   }
-  body > footer > section {
+  footer.siteWide > section {
     -ms-flex-preferred-size: 30%;
         flex-basis: 30%;
   }
-  body > footer section:last-child {
+  footer.siteWide section:last-child {
     border-top: none;
   }
-  body > footer p,
-  body > footer a {
+  footer.siteWide p,
+  footer.siteWide a {
     max-width: 100%;
   }
 }
@@ -1073,7 +1073,7 @@ div.lobbyDiv div.flexRow {
   padding: 0.1em;
   font-size: 1.5em;
 }
-body > footer .icon {
+footer.siteWide .icon {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-box;
@@ -1198,7 +1198,7 @@ div.cta > div > h6 {
   height: auto;
   margin-bottom: 0.8vw;
 }
-body > footer img.logo {
+footer.siteWide img.logo {
   width: 15vw;
 }
 .inpage-logo {
@@ -1212,7 +1212,7 @@ body > footer img.logo {
   height: auto;
 }
 @media screen and (min-width: 750px) {
-  body > footer img.logo {
+  footer.siteWide img.logo {
     width: 120px;
   }
   .inpage-logo {
@@ -1932,7 +1932,7 @@ li a:visited {
   }
 }
 .iconLink {
-  text-decoration: none;
+  text-decoration: none !important;
   position: relative;
 }
 .iconLink span {
@@ -2150,11 +2150,11 @@ strong {
   color: rgba(255,255,255,0.75);
   overflow: hidden;
 }
-body > footer p a {
+footer.siteWide p a {
   font-size: 1em;
   line-height: 160%;
 }
-body > footer h6 {
+footer.siteWide h6 {
   font-weight: 700;
   font-size: 1em;
   line-height: 120%;

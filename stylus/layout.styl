@@ -11,7 +11,7 @@ body footer
         min-height: 90vh  - (padL)
         padding-top: 0
         padding-bottom: padL  
-    main, div#priNav-v2, div#priNav, div#secNav, body > footer, div#carouselIndicator, div#slideNav, body > div.owl-theme div.contentHdr
+    main, div#priNav-v2, div#priNav, div#secNav, footer.siteWide, div#carouselIndicator, div#slideNav, div.owl-theme.mktngSlider div.contentHdr
         padding-left: padL*1.5    
         padding-right: padL*1.5
     body footer
@@ -132,7 +132,7 @@ div.content.cE
     text-align: left 
   
 @media phoneRule
-    main, body > footer, body > div.owl-theme div.contentHdr
+    main, footer.siteWide, div.owl-theme.mktngSlider div.contentHdr
         padding: padStd    
     div.content section > div
         padding: padXL*1.5 padL*1.4 padXL*1.5 padL*1.5
@@ -278,49 +278,49 @@ div.content.cE
 
 
 // footer
-body > footer section
+footer.siteWide section
     padding: padL
-body > footer section > a
+footer.siteWide section > a
     display: inline-block
     margin-bottom: 0.75em
     text-decoration: underline
 @media phoneRule
-    body > footer
+    footer.siteWide
         border-top: none
-    body > footer section
+    footer.siteWide section
         text-align: center
         border-top: 4px solid brand1
-    body > footer img.logo
+    footer.siteWide img.logo
         margin: 2em auto
         width: 30vw !important
-    body > footer p,
-    body > footer a
+    footer.siteWide p,
+    footer.siteWide a
         max-width: 75%
         margin: 1em auto
         font-size: 1em !important
         line-height: 1.3em !important
 @media ttrigger
-    body > footer section:last-child
+    footer.siteWide section:last-child
         border-top: 4px solid brand1
-    body > footer img.logo
+    footer.siteWide img.logo
         margin-bottom: 2em
-    body > footer p,
-    body > footer a
+    footer.siteWide p,
+    footer.siteWide a
         max-width: 90%
 @media dtrigger
-    body > footer section
+    footer.siteWide section
         padding: 0 padStd
-    body > footer
+    footer.siteWide
         display: flex
         justify-content: flex-start
         align-items: flex-start
         column-gap: marL
-    body > footer > section
+    footer.siteWide > section
         flex-basis: 30%
-    body > footer section:last-child
+    footer.siteWide section:last-child
         border-top: none
-    body > footer p,
-    body > footer a
+    footer.siteWide p,
+    footer.siteWide a
         max-width: 100%
 
 
