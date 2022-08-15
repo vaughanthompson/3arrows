@@ -1,7 +1,8 @@
 //core layout
 main
     background-color: blackAlp50
-    min-height: 100vh
+    //min-height: 100vh
+    min-height: 90vh  - (padL)
 body footer
     border-top: 1px solid whiteAlp25
     background-color: blackAlp50
@@ -533,3 +534,34 @@ div.lobbyDiv
 div.lobbyDiv div.flexRow
     display: flex
     justify-content: space-between
+
+
+/* actionPanel */
+div.actionPanel
+    position: fixed
+    width: 100vw
+    bottom: 0
+    background-color: blackAlp85
+    z-index: 5000
+
+div.actionInner
+    padding: 3vw 1vw 2vw 1vw
+
+div.actionPanel div.actionInfo,
+div.actionPanel div.actions
+    display: flex
+    column-gap: 2vw
+    align-items: center
+    justify-content: center
+    margin: 2vw 0
+
+div.actionPanel div.actionInfo
+    margin-bottom: 4vw
+
+div.actionPanel div.actionInfo div.actionMsg
+    flex-basis: 70%
+    font-size: 0.85em
+    line-height: 1.2em
+
+div.actionPanel div.actionInfo div:first-child
+    text-align: center

@@ -128,7 +128,7 @@ hr.alt {
 }
 main {
   background-color: rgba(0,0,0,0.5);
-  min-height: 100vh;
+  min-height: 85vh;
 }
 body footer {
   border-top: 1px solid rgba(255,255,255,0.25);
@@ -1027,6 +1027,47 @@ div.lobbyDiv div.flexRow {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+div.actionPanel {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.85);
+  z-index: 5000;
+}
+div.actionInner {
+  padding: 3vw 1vw 2vw 1vw;
+}
+div.actionPanel div.actionInfo,
+div.actionPanel div.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-column-gap: 2vw;
+  -moz-column-gap: 2vw;
+  column-gap: 2vw;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 2vw 0;
+}
+div.actionPanel div.actionInfo {
+  margin-bottom: 4vw;
+}
+div.actionPanel div.actionInfo div.actionMsg {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  font-size: 0.85em;
+  line-height: 1.2em;
+}
+div.actionPanel div.actionInfo div:first-child {
+  text-align: center;
+}
 .icon {
   background-color: #333;
   color: #fff;
@@ -1093,6 +1134,8 @@ footer.siteWide .icon {
 a.majorCTA,
 a.minorCTA,
 a.ctaButton,
+a.ctaButtonPri,
+a.ctaButtonSec,
 input[type=submit] {
   color: #fff;
   background-color: #29abe2;
@@ -1105,7 +1148,8 @@ input[type=submit] {
   font-size: 1em;
   line-height: 140%;
   font-weight: 500;
-  text-decoration: none;
+  text-decoration: none !important;
+  position: relative;
 }
 input[type=submit] {
   margin-bottom: 0;
@@ -1114,12 +1158,18 @@ a.majorCTA {
   background-color: #f00;
   border-color: #f00;
 }
+a.ctaButtonSec {
+  background-color: #646464;
+  border-color: #646464;
+}
 a.minorCTA {
   background: none;
   border-color: #fff;
 }
-a.ctaButton i {
-  margin-left: 15px;
+a.ctaButton i,
+a.ctaButtonPri i,
+a.ctaButtonSec i {
+  margin-left: 0;
   margin-right: 10px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -1127,15 +1177,32 @@ a.ctaButton i {
 a.ctaButton i:before {
   color: #333;
 }
+a.majorCTA.hasIcon,
+a.minorCTA.hasIcon,
+a.ctaButtonPri.hasIcon,
+a.ctaButtonSec.hasIcon,
+input[type=submit] .hasIcon {
+  padding: 12px 15px 7px 30px;
+}
+a.majorCTA.hasIcon i:before,
+a.minorCTA.hasIcon i:before,
+a.ctaButtonPri.hasIcon i:before,
+a.ctaButtonSec.hasIcon i:before,
+input[type=submit] .hasIcon i:before {
+  font-size: 25px;
+  left: 12px;
+  position: absolute;
+  line-height: 20px;
+}
 @media screen and (max-width: 750px) {
   a.majorCTA,
   a.minorCTA,
   a.ctaButton,
+  a.ctaButtonPri,
+  a.ctaButtonSec,
   input[type=submit] {
-    padding: 12px 15px 10px 15px;
+    padding: 12px 15px 7px 15px;
     border-radius: 6px;
-    font-size: 0.7em;
-    line-height: 100%;
   }
 }
 #priNav a.majorCTA {
@@ -1153,6 +1220,12 @@ div.cta > div > h6 {
   input[type=submit]:hover,
   a.ctaButton:hover,
   a.ctaButton:hover > i:before,
+  a.ctaButtonPri:hover,
+  a.ctaButtonPri:hover > i:before,
+  a.ctaButtonSec:hover,
+  a.ctaButtonSec:hover > i:before,
+  a.minorCTA:hover,
+  a.minorCTA:hover > i:before,
   a.majorCTA:hover,
   a.majorCTA:hover > i:before {
     color: #fff;
@@ -1976,7 +2049,7 @@ div#priNav a.logo-small h2 {
   font-size: 0.5em;
   line-height: 1.3em;
   text-transform: uppercase;
-  color: #808080;
+  color: #646464;
   font-weight: 400;
   letter-spacing: 0.07em;
   margin-bottom: 0;
@@ -3132,6 +3205,9 @@ span.statusDots span {
 span.statusDots span.inactive {
   background-color: rgba(255,255,255,0.25);
 }
+div.opponentDrawer.turnInProgress {
+  display: none;
+}
 div.opponentDrawer div.itemDetail {
   display: none;
 }
@@ -3245,6 +3321,12 @@ div.boardContain div.item.playable svg.piece g.base rect.border {
   fill: rgba(255,255,255,0.25);
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+.flashModded {
+  -webkit-animation-name: flashModded;
+  animation-name: flashModded;
+  -webkit-animation-duration: 2.5s;
+  animation-duration: 2.5s;
 }
 div.boardContain div.item span.coords {
   display: inline-block;
@@ -3575,6 +3657,15 @@ span.isoSVG {
   margin-left: 4px;
   margin-right: 4px;
 }
+span.isoSVG.x1_5 {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  margin-bottom: -4px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
 span.isoSVG.x2 {
   display: inline-block;
   width: 50px;
@@ -3586,6 +3677,32 @@ span.isoSVG.x2 {
 }
 svg.piece g.bonus {
   fill: #fff;
+}
+@-webkit-keyframes flashModded {
+  0%, 50%, 100% {
+    opacity: 1;
+    -ms-filter: none;
+    -webkit-filter: none;
+            filter: none;
+  }
+  25%, 75% {
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+  }
+}
+@keyframes flashModded {
+  0%, 50%, 100% {
+    opacity: 1;
+    -ms-filter: none;
+    -webkit-filter: none;
+            filter: none;
+  }
+  25%, 75% {
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+  }
 }
 @-webkit-keyframes pNavails {
   from {

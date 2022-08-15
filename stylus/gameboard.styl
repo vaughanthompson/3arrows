@@ -234,6 +234,9 @@ span.statusDots span
 span.statusDots span.inactive
     background-color: whiteAlp25
 
+div.opponentDrawer.turnInProgress
+    display: none
+
 div.opponentDrawer div.itemDetail
     display: none
 div.opponentDrawer div.itemDetail.active
@@ -325,6 +328,25 @@ div.boardContain div.item.playable svg.piece g.base rect.fill
 div.boardContain div.item.playable svg.piece g.base rect.border
     fill: whiteAlp25
     transition: 0.2s
+
+
+
+
+@keyframes flashModded {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0.5;
+  }
+}
+
+.flashModded {
+  animation-name: flashModded;
+  animation-duration: 2.5s;
+}
+
 
 div.boardContain div.item span.coords 
     display: inline-block
@@ -685,6 +707,15 @@ span.isoSVG
     margin-right: 4px
 
 
+span.isoSVG.x1_5
+    display: inline-block
+    width: 35px
+    height: 35px
+    position: relative
+    margin-bottom: -4px
+    margin-left: 4px
+    margin-right: 4px
+
 span.isoSVG.x2
     display: inline-block
     width: 50px
@@ -694,8 +725,8 @@ span.isoSVG.x2
     margin-left: 4px
     margin-right: 4px
 
-
 /* bonus piece */
 svg.piece g.bonus 
     fill: white
+
 

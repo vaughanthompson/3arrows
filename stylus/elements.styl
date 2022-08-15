@@ -46,6 +46,8 @@ footer.siteWide .icon
 a.majorCTA,
 a.minorCTA,
 a.ctaButton,
+a.ctaButtonPri,
+a.ctaButtonSec,
 input[type=submit]
     color: white
     background-color: material
@@ -58,31 +60,59 @@ input[type=submit]
     font-size: 1em
     line-height: 140%
     font-weight: 500
-    text-decoration: none
+    text-decoration: none !important
+    position relative
 input[type=submit]
     margin-bottom: 0
 a.majorCTA
     background-color: bad
     border-color: bad
+a.ctaButtonSec
+    background-color: grey
+    border-color: grey
 a.minorCTA
     background: none
     border-color: white
-a.ctaButton i
-    margin-left:15px 
+a.ctaButton i,
+a.ctaButtonPri i,
+a.ctaButtonSec i
+    margin-left:0 
     margin-right:10px;
     transition: 0.2s 
 a.ctaButton i:before
     color: brand1
 
+a.majorCTA.hasIcon,
+a.minorCTA.hasIcon,
+a.ctaButtonPri.hasIcon,
+a.ctaButtonSec.hasIcon,
+a.ctaButtonSec.hasIcon,
+input[type=submit] .hasIcon
+    padding: 12px 15px 7px 30px
+
+a.majorCTA.hasIcon i:before,
+a.minorCTA.hasIcon i:before,
+a.ctaButtonPri.hasIcon i:before,
+a.ctaButtonSec.hasIcon i:before,
+a.ctaButtonSec.hasIcon i:before,
+input[type=submit] .hasIcon i:before   
+    font-size: 25px
+    left:12px
+    position: absolute
+    line-height: 20px
+
+
 @media phoneRule
    a.majorCTA,
    a.minorCTA,
    a.ctaButton,
+   a.ctaButtonPri,
+   a.ctaButtonSec,
    input[type=submit]
-        padding: 12px 15px 10px 15px
+        padding: 12px 15px 7px 15px
         border-radius: 6px
-        font-size: 0.7em
-        line-height: 100%
+        // font-size: 0.95em
+        // line-height: 100%
 
 #priNav a.majorCTA
     text-shadow: 0px 1px 2px halfDark    
@@ -96,6 +126,12 @@ div.cta > div > h6
     input[type=submit]:hover,
     a.ctaButton:hover,
     a.ctaButton:hover > i:before,
+    a.ctaButtonPri:hover,
+    a.ctaButtonPri:hover > i:before,
+    a.ctaButtonSec:hover,
+    a.ctaButtonSec:hover > i:before,
+    a.minorCTA:hover,
+    a.minorCTA:hover > i:before,
     a.majorCTA:hover,
     a.majorCTA:hover > i:before
         color: white

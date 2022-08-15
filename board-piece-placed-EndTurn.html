@@ -128,9 +128,12 @@
                             <span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span>
                             <span class="rating">(1293)</span>
                         </div>
-                        <a href="#" class="openDetail"><i class="icon-keyboard_arrow_down"></i></a>
+                        <span class="timeRemain">
+                            <i class="icon-access_alarm"></i><h6>00:00:00</h6> 
+                            <svg viewbox="0 0 54.34 62.74" class="indicator"><g><polygon points="0 31.37 54.34 62.74 54.34 0 0 31.37"/></g></svg>
+                        </span>
                     </div>
-                    <div class="itemDetail">
+                    <div class="itemDetail active">
                         <div class="gameboard singleRow darkMode">
                                 <div class="dashContain">
 
@@ -640,7 +643,7 @@
                         </div>
                         <a href="#" class="openDetail"><i class="icon-keyboard_arrow_down"></i></a>
                     </div>
-                    <div class="itemDetail active">
+                    <div class="itemDetail">
                         <div class="gameboard singleRow darkMode">
                                 <div class="dashContain">
 
@@ -1159,14 +1162,28 @@
                                 <div class="item">                                    
                                     <span class="coords">G3</span>
                                 </div>
-                                <div class="item">
+                                <div class="item p1">
                                     <span class="coords">G4</span>
-                                    <svg class="piece" viewbox="0 0 64 64">
+                                        <svg class="piece" viewbox="0 0 64 64">
                                         <g class="base">
                                             <rect class="fill" x="6" y="6" width="52" height="52" rx="8"/>
                                             <rect class="border"  x="2" y="2" width="60" height="60" rx="12"/>
                                         </g>
-                                    </svg>
+                                        <g class="pieceType angel r0">
+                                            <g class="">
+                                                <polyline points="37.29 48.25 32 53.55 26.71 48.25"/>
+                                                <path d="M30.85,48.93v0L32,50.1h0L33.16,49v0c0-4.67,0-1.89-.09-6.67C33,34.53,32.74,37,32.36,27.6h-.71c-.39,9.38-.6,6.93-.71,14.66C30.87,47,30.84,44.26,30.85,48.93Z"/>
+                                            </g>
+                                            <g class="">
+                                                <polyline points="45.59 10.45 52.87 10.45 52.87 17.73"/>
+                                                <path d="M50.27,14.68h0V13H48.64c-3.31,3.3-1.33,1.36-4.66,4.79-5.38,5.54-3.5,4-9.86,10.86h0l.5.5h0c6.91-6.36,5.33-4.48,10.87-9.87C48.91,16,47,18,50.27,14.68Z"/>
+                                            </g>
+                                            <g class="">
+                                                <polyline points="11.13 17.73 11.13 10.45 18.41 10.45"/>
+                                                <path d="M15.36,13.05H13.71v1.63h0C17,18,15.09,16,18.51,19.34c5.54,5.38,4,3.5,10.87,9.86h0l.51-.5h0C23.52,21.79,25.4,23.37,20,17.83,16.68,14.41,18.67,16.35,15.36,13.05Z"/>
+                                            </g>
+                                        </g>
+                                        </svg>
                                 </div>                                
                                 <div class="item">
                                     <span class="coords">G5</span>
@@ -1191,12 +1208,6 @@
                                 </div>
                                 <div class="item">
                                     <span class="coords">H3</span>
-                                    <svg class="piece" viewbox="0 0 64 64">
-                                        <g class="base">
-                                            <rect class="fill" x="6" y="6" width="52" height="52" rx="8"/>
-                                            <rect class="border"  x="2" y="2" width="60" height="60" rx="12"/>
-                                        </g>
-                                    </svg>
                                 </div>                                
                                 <div class="item p1 r180">
                                     <span class="coords">h4</span>
@@ -1225,12 +1236,6 @@
                                 </div>
                                 <div class="item">
                                     <span class="coords">H5</span>
-                                    <svg class="piece" viewbox="0 0 64 64">
-                                        <g class="base">
-                                            <rect class="fill" x="6" y="6" width="52" height="52" rx="8"/>
-                                            <rect class="border"  x="2" y="2" width="60" height="60" rx="12"/>
-                                        </g>
-                                    </svg>
                                 </div>
                                 <div class="item">
                                     <span class="coords">H6</span>
@@ -1521,6 +1526,24 @@
 
   
     
+<!-- on this appearing- via a user trigger, select piece or any other choice requirment in-garm, can we collapse any opponent drawers to gain screen for this to display at bottom in fixed overlay format-->
+
+<div class="actionPanel"><!-- just use for positioning and z-index -->
+    <div class="actionInner"><!-- set height here and do flex -->
+        
+        <div class="actionInfo">
+            <div class="actionMsg">
+                Your turn is completed.
+            </div>
+        </div>
+        <div class="actions"> 
+            <a  href="#" class="ctaButton">Ok</a>
+        </div>
+    </div>
+</div>
+
+
+
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="/js/jquery.waypoints.min.js" ></script>
