@@ -128,7 +128,7 @@ hr.alt {
 }
 main {
   background-color: rgba(0,0,0,0.5);
-  min-height: 85vh;
+  min-height: 91vh;
 }
 body footer {
   border-top: 1px solid rgba(255,255,255,0.25);
@@ -1158,6 +1158,11 @@ a.majorCTA {
   background-color: #f00;
   border-color: #f00;
 }
+a.ctaButtonPri {
+  background-color: #fff;
+  border-color: #fff;
+  color: #29abe2 !important;
+}
 a.ctaButtonSec {
   background-color: #646464;
   border-color: #646464;
@@ -1228,7 +1233,7 @@ div.cta > div > h6 {
   a.minorCTA:hover > i:before,
   a.majorCTA:hover,
   a.majorCTA:hover > i:before {
-    color: #fff;
+    color: #fff !important;
     border-color: #fff;
     background: none;
     opacity: 1;
@@ -2308,7 +2313,7 @@ div.gameboard div.container {
   align-items: stretch;
   border-right: 1px solid;
   border-bottom: 1px solid;
-  border-color: rgba(255,255,255,0.5);
+  border-color: rgba(255,255,255,0.25);
 }
 div.gameboard div.dashContain {
   height: 7.5vh;
@@ -3005,7 +3010,7 @@ div.gameboard div.dashContain > div.item {
   border: 1px solid;
   border-right: none;
   border-bottom: none;
-  border-color: rgba(255,255,255,0.5);
+  border-color: rgba(255,255,255,0.25);
   padding: 0px;
   z-index: 1000;
 }
@@ -3677,6 +3682,33 @@ span.isoSVG.x2 {
 }
 svg.piece g.bonus {
   fill: #fff;
+}
+div.item.attackable svg.piece g.pieceType polyline,
+div.item.attackable svg.piece g.pieceType path {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+div.item.attackable svg.piece g.pieceType polyline.attackable {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+}
+div.item.attackable svg.piece rect.border {
+  stroke: #fff;
+}
+div.p1.item.attackable.nonContrib svg.piece rect.border {
+  stroke: var(--pTheme1);
+}
+div.p2.item.attackable.nonContrib svg.piece rect.border {
+  stroke: var(--pTheme2);
+}
+div.p3.item.attackable.nonContrib svg.piece rect.border {
+  stroke: var(--pTheme3);
+}
+div.p4.item.attackable.nonContrib svg.piece rect.border {
+  stroke: var(--pTheme4);
 }
 @-webkit-keyframes flashModded {
   0%, 50%, 100% {

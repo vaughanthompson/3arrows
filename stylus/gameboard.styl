@@ -35,7 +35,7 @@ div.gameboard div.container
     align-items: stretch
     border-right: 1px solid
     border-bottom: 1px solid
-    border-color: whiteAlp50
+    border-color: whiteAlp25
 
 div.gameboard div.dashContain
     height: 7.5vh
@@ -80,7 +80,7 @@ div.gameboard div.dashContain > div.item
     border: 1px solid
     border-right: none
     border-bottom: none
-    border-color: whiteAlp50
+    border-color: whiteAlp25
     padding: 0px
     z-index: 1000
 
@@ -730,3 +730,22 @@ svg.piece g.bonus
     fill: white
 
 
+/* attackable */
+
+div.item.attackable svg.piece g.pieceType polyline,
+div.item.attackable svg.piece g.pieceType path 
+    opacity: 0.5
+div.item.attackable svg.piece g.pieceType polyline.attackable 
+    opacity: 1.0
+div.item.attackable svg.piece rect.border
+    stroke: #fff
+div.p1.item.attackable.nonContrib svg.piece rect.border
+    stroke: var(--pTheme1)
+div.p2.item.attackable.nonContrib svg.piece rect.border
+    stroke: var(--pTheme2)
+div.p3.item.attackable.nonContrib svg.piece rect.border
+    stroke: var(--pTheme3)
+div.p4.item.attackable.nonContrib svg.piece rect.border
+    stroke: var(--pTheme4)
+    //stroke-dasharray: 3,2
+    //opacity 0.7
