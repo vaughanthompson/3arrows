@@ -1068,6 +1068,41 @@ div.actionPanel div.actionInfo div.actionMsg {
 div.actionPanel div.actionInfo div:first-child {
   text-align: center;
 }
+div.overlayBoard {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 2000;
+  background-color: rgba(0,0,0,0.9);
+}
+div.overlayContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 90vh;
+}
+div.overlayContent {
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
+  padding: 7vw;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 20px 5px #000;
+  box-shadow: 0 0 20px 5px #000;
+}
+div.overlayMsg {
+  text-align: center;
+}
 .icon {
   background-color: #333;
   color: #fff;
