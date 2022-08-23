@@ -3721,6 +3721,22 @@ div.item.attack_pW {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: alpha(opacity=30);
 }
+.p1 svg.piece g.skull path,
+.p1 svg.piece g.skull polygon {
+  fill: var(--pTheme1);
+}
+.p2 svg.piece g.skull path,
+.p2 svg.piece g.skull polygon {
+  fill: var(--pTheme2);
+}
+.p3 svg.piece g.skull path,
+.p3 svg.piece g.skull polygon {
+  fill: var(--pTheme3);
+}
+.p4 svg.piece g.skull path,
+.p4 svg.piece g.skull polygon {
+  fill: var(--pTheme4);
+}
 .scaleOut {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
