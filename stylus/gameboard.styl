@@ -155,7 +155,7 @@ div.itemHeader span.smallBox h6
     margin-left: 5px
     top:-2px
     vertical-align: middle
-    font-size: 0.7em
+    font-size: 1em
     line-height: 0.7em 
 div.itemHeader span.timeRemain h6
     display: inline-block
@@ -233,6 +233,28 @@ span.statusDots span
     background-color: whiteAlp90
 span.statusDots span.inactive
     background-color: whiteAlp25
+
+span.pieceCount 
+    right:0
+    bottom: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    background: black
+    padding: padXXS*0.75 padXXS 0 padXXS
+span.pieceCount
+    text-align: center
+    font-weight: 600
+    font-size:14px
+div.item.p1 span.pieceCount
+    color: var(--pTheme1)
+div.item.p2 span.pieceCount
+    color: var(--pTheme2)
+div.item.p3 span.pieceCount
+    color: var(--pTheme3)
+div.item.p4 span.pieceCount
+    color: var(--pTheme4)
 
 div.opponentDrawer.turnInProgress
     display: none
@@ -568,7 +590,41 @@ div.item.hasHidden svg.piece g.pieceType polyline {
 }
 
 
+/* disable and depleted states - dashboards */
+.inactive svg
+    opacity: 0.2
+div.itemDetail div.item.p1.disabled svg.piece g.base rect.fill
+    fill: whiteAlp25
+div.itemDetail div.item.p2.disabled svg.piece g.base rect.fill
+    fill: whiteAlp25
+div.itemDetail div.item.p3.disabled svg.piece g.base rect.fill
+    fill: whiteAlp25
+div.itemDetail div.item.p4.disabled svg.piece g.base rect.fill
+    fill: whiteAlp25
 
+div.itemDetail div.item.p1.disabled svg.piece path
+div.itemDetail div.item.p1.disabled svg.piece polygon
+    fill: var(--pTheme1)
+div.itemDetail div.item.p1.disabled svg.piece polyline
+    stroke: var(--pTheme1)
+
+div.itemDetail div.item.p2.disabled svg.piece path
+div.itemDetail div.item.p2.disabled svg.piece polygon
+    fill: var(--pTheme2)
+div.itemDetail div.item.p2.disabled svg.piece polyline
+    stroke: var(--pTheme2)  
+
+div.itemDetail div.item.p3.disabled svg.piece path
+div.itemDetail div.item.p3.disabled svg.piece polygon
+    fill: var(--pTheme3)
+div.itemDetail div.item.p3.disabled svg.piece polyline
+    stroke: var(--pTheme3)
+
+div.itemDetail div.item.p4.disabled svg.piece path
+div.itemDetail div.item.p4.disabled svg.piece polygon
+    fill: var(--pTheme4)
+div.itemDetail div.item.p4.disabled svg.piece polyline
+    stroke: var(--pTheme4)
 
 
 /* selected . attack highlighting */

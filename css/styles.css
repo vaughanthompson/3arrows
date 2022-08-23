@@ -3148,7 +3148,7 @@ div.itemHeader span.smallBox h6 {
   margin-left: 5px;
   top: -2px;
   vertical-align: middle;
-  font-size: 0.7em;
+  font-size: 1em;
   line-height: 0.7em;
 }
 div.itemHeader span.timeRemain h6 {
@@ -3244,6 +3244,42 @@ span.statusDots span {
 }
 span.statusDots span.inactive {
   background-color: rgba(255,255,255,0.25);
+}
+span.pieceCount {
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  background: #000;
+  padding: 0.6vw 0.8vw 0 0.8vw;
+}
+span.pieceCount {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+div.item.p1 span.pieceCount {
+  color: var(--pTheme1);
+}
+div.item.p2 span.pieceCount {
+  color: var(--pTheme2);
+}
+div.item.p3 span.pieceCount {
+  color: var(--pTheme3);
+}
+div.item.p4 span.pieceCount {
+  color: var(--pTheme4);
 }
 div.opponentDrawer.turnInProgress {
   display: none;
@@ -3564,6 +3600,51 @@ div.item.hasHidden svg.piece g.pieceType polyline {
   fill: none;
   stroke-miterlimit: 10;
   stroke-width: 2px;
+}
+.inactive svg {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+div.itemDetail div.item.p1.disabled svg.piece g.base rect.fill {
+  fill: rgba(255,255,255,0.25);
+}
+div.itemDetail div.item.p2.disabled svg.piece g.base rect.fill {
+  fill: rgba(255,255,255,0.25);
+}
+div.itemDetail div.item.p3.disabled svg.piece g.base rect.fill {
+  fill: rgba(255,255,255,0.25);
+}
+div.itemDetail div.item.p4.disabled svg.piece g.base rect.fill {
+  fill: rgba(255,255,255,0.25);
+}
+div.itemDetail div.item.p1.disabled svg.piece path,
+div.itemDetail div.item.p1.disabled svg.piece polygon {
+  fill: var(--pTheme1);
+}
+div.itemDetail div.item.p1.disabled svg.piece polyline {
+  stroke: var(--pTheme1);
+}
+div.itemDetail div.item.p2.disabled svg.piece path,
+div.itemDetail div.item.p2.disabled svg.piece polygon {
+  fill: var(--pTheme2);
+}
+div.itemDetail div.item.p2.disabled svg.piece polyline {
+  stroke: var(--pTheme2);
+}
+div.itemDetail div.item.p3.disabled svg.piece path,
+div.itemDetail div.item.p3.disabled svg.piece polygon {
+  fill: var(--pTheme3);
+}
+div.itemDetail div.item.p3.disabled svg.piece polyline {
+  stroke: var(--pTheme3);
+}
+div.itemDetail div.item.p4.disabled svg.piece path,
+div.itemDetail div.item.p4.disabled svg.piece polygon {
+  fill: var(--pTheme4);
+}
+div.itemDetail div.item.p4.disabled svg.piece polyline {
+  stroke: var(--pTheme4);
 }
 div.item.attack {
   z-index: 2000 !important;
