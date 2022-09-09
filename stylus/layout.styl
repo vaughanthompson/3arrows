@@ -3,6 +3,8 @@ main
     background-color: blackAlp50
     //min-height: 100vh
     min-height: 96vh  - (padL)
+main.flexHeight 
+    min-height: 10vh
 body footer
     border-top: 1px solid whiteAlp25
     background-color: blackAlp50
@@ -15,6 +17,7 @@ body footer
     main, div#priNav-v2, div#priNav, div#secNav, footer.siteWide, div#carouselIndicator, div#slideNav, div.owl-theme.mktngSlider div.contentHdr
         padding-left: padL*1.5    
         padding-right: padL*1.5
+    
     body footer
         min-height: 10vh - (padM + padL)
         padding-top: padL
@@ -536,6 +539,106 @@ div.lobbyDiv div.flexRow
     justify-content: space-between
 
 
+div.lobbyDiv.gamesList a
+    text-decoration: none
+
+div.lobbyDiv.gamesList
+    tr.gameDetail td
+        background-color: whiteAlp05
+        padding: padXS
+
+div.lobbyDiv.gamesList
+    tr.gameDetail ol 
+        margin: 0
+        padding: 0
+        padding-left: 10px
+        //counter-reset: item
+        //list-style-type: none
+div.lobbyDiv.gamesList
+    tr.gameDetail li:before
+        //content: counter(item) " ";
+        //counter-increment: item
+div.lobbyDiv.gamesList
+    tr.gameDetail li
+        margin: 0
+        margin-top: marXXS
+        padding-left: 0
+        margin-left: 20px
+        line-height: 1.6
+        vertical-align: bottom
+        white-space: nowrap
+        //display: block
+        
+
+div.lobbyDiv.gamesList
+    tr.gameDetail li.p1
+        color: var(--pTheme1)
+div.lobbyDiv.gamesList
+    tr.gameDetail li.p2
+        color: var(--pTheme2)
+div.lobbyDiv.gamesList
+    tr.gameDetail li.p3
+        color: var(--pTheme3)
+div.lobbyDiv.gamesList
+    tr.gameDetail li.p4
+        color: var(--pTheme4)
+div.lobbyDiv.gamesList
+    tr.gameDetail li.active:before
+        font-family: 'icomoon'
+        content: '\e910'
+        position: absolute
+        left: 0
+        font-size:15px
+        line-height: 15px
+        color: white
+        
+
+div.lobbyDiv.gamesList
+    div.gameDetail
+        display: flex
+        flex-wrap: nowrap
+        align-items: center
+        justify-content: space-between
+div.lobbyDiv.gamesList
+    div.gameDetail > div 
+        flex: 1 1 auto
+        align-self: stretch
+div.lobbyDiv.gamesList
+    div.gameDetail > div:last-child
+        flex-basis: 40%
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: flex-end
+        padding-top: padXS
+        padding-bottom: padXS
+        
+div.lobbyDiv.gamesList
+    div.gameDetail > div:last-child > span
+        flex-basis: 40%
+
+div.lobbyDiv.gamesList
+    div.gameDetail > div:last-child > span:last-child
+        text-align: center
+         
+@media phoneRule 
+ div.lobbyDiv.gamesList
+    div.gameDetail > div:last-child > span
+        flex-basis: 80%
+    div.lobbyDiv.gamesList
+    div.gameDetail > div:last-child > span:last-child
+        text-align: left   
+
+@media dtrigger 
+    tr.gameDetailTrigger:hover
+        cursor: pointer
+        transition: 0.5s
+        opacity: 0.7
+
+
+
+
+
 /* actionPanel */
 div.actionPanel
     position: fixed
@@ -565,6 +668,10 @@ div.actionPanel div.actionInfo div.actionMsg
 
 div.actionPanel div.actionInfo div:first-child
     text-align: center
+
+
+
+
 
 
 

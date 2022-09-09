@@ -514,7 +514,7 @@ svg.piece g.shield path.shieldBorder {
 .p1 svg.piece g.shield path.shieldfront2,
 .p1 svg.piece g.eyeShdw path {
     fill: var(--pTheme1);
-    stroke: var(--pTheme1);
+    //stroke: var(--pTheme1);
 }
 .p2 svg.piece g.shield path.shieldfront2,
 .p2 svg.piece g.eyeShdw path {
@@ -539,6 +539,9 @@ div.dashContain svg.piece g.eye path {
     fill: #fff;
     opacity: 1;
 }
+svg.piece g.eyeShdw path 
+    opacity: 0.75
+
 /*
 .p4 svg.piece g.eye path {
     fill: #333;
@@ -568,13 +571,13 @@ svg.piece g.hidden g.rings rect {
     stroke: #fff;
     stroke-miterlimit: 10;
     stroke-width: 3px;
-    opacity: 0.25;
-}
-svg.piece g.hidden g.rings rect:first-child {
     opacity: 0.15;
 }
+svg.piece g.hidden g.rings rect:first-child {
+    opacity: 0.1;
+}
 svg.piece g.hidden g.rings rect:last-child {
-    opacity: 0.35;
+    opacity: 0.25;
 }
 
 

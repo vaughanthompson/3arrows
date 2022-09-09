@@ -130,6 +130,9 @@ main {
   background-color: rgba(0,0,0,0.5);
   min-height: 91vh;
 }
+main.flexHeight {
+  min-height: 10vh;
+}
 body footer {
   border-top: 1px solid rgba(255,255,255,0.25);
   background-color: rgba(0,0,0,0.5);
@@ -1027,6 +1030,128 @@ div.lobbyDiv div.flexRow {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+div.lobbyDiv.gamesList a {
+  text-decoration: none;
+}
+div.lobbyDiv.gamesList tr.gameDetail td {
+  background-color: rgba(255,255,255,0.05);
+  padding: 1.5vw;
+}
+div.lobbyDiv.gamesList tr.gameDetail ol {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+}
+div.lobbyDiv.gamesList tr.gameDetail li {
+  margin: 0;
+  margin-top: 0.8vw;
+  padding-left: 0;
+  margin-left: 20px;
+  line-height: 1.6;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+div.lobbyDiv.gamesList tr.gameDetail li.p1 {
+  color: var(--pTheme1);
+}
+div.lobbyDiv.gamesList tr.gameDetail li.p2 {
+  color: var(--pTheme2);
+}
+div.lobbyDiv.gamesList tr.gameDetail li.p3 {
+  color: var(--pTheme3);
+}
+div.lobbyDiv.gamesList tr.gameDetail li.p4 {
+  color: var(--pTheme4);
+}
+div.lobbyDiv.gamesList tr.gameDetail li.active:before {
+  font-family: 'icomoon';
+  content: '\e910';
+  position: absolute;
+  left: 0;
+  font-size: 15px;
+  line-height: 15px;
+  color: #fff;
+}
+div.lobbyDiv.gamesList div.gameDetail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -o-box-lines: single;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+div.lobbyDiv.gamesList div.gameDetail > div {
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: stretch;
+  -ms-grid-row-align: stretch;
+      align-self: stretch;
+  -ms-flex-item-align: stretch;
+}
+div.lobbyDiv.gamesList div.gameDetail > div:last-child {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -o-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+}
+div.lobbyDiv.gamesList div.gameDetail > div:last-child > span {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+div.lobbyDiv.gamesList div.gameDetail > div:last-child > span:last-child {
+  text-align: center;
+}
+@media screen and (max-width: 750px) {
+  div.lobbyDiv.gamesList div.gameDetail > div:last-child > span {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+  }
+  div.lobbyDiv.gamesList div.lobbyDiv.gamesList,
+  div.lobbyDiv.gamesList div.gameDetail > div:last-child > span:last-child {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1100px) {
+  tr.gameDetailTrigger:hover {
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+  }
+}
 div.actionPanel {
   position: fixed;
   width: 100vw;
@@ -1140,6 +1265,9 @@ div.overlayMsg {
 }
 .ic-basic.rev::before {
   color: #fff;
+}
+.inline {
+  display: inline-block;
 }
 #navMobile .icon,
 #navHeader .icon {
@@ -1533,6 +1661,20 @@ picture.bordered {
   picture {
     margin: 3vw;
   }
+}
+span.gameLeader {
+  display: inline-table;
+  padding: 3px;
+  background-color: #dc9600;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 3px 0px #000;
+  box-shadow: 2px 2px 3px 0px #000;
+  margin-left: 5px;
+  margin-right: 5px;
+  vertical-align: baseline;
+}
+span.gameLeader img {
+  width: 10px;
 }
 p.figureCap {
   width: auto;
@@ -3545,7 +3687,6 @@ svg.piece g.shield path.shieldBorder {
 .p1 svg.piece g.shield path.shieldfront2,
 .p1 svg.piece g.eyeShdw path {
   fill: var(--pTheme1);
-  stroke: var(--pTheme1);
 }
 .p2 svg.piece g.shield path.shieldfront2,
 .p2 svg.piece g.eyeShdw path {
@@ -3573,24 +3714,29 @@ div.dashContain svg.piece g.eye path {
   -webkit-filter: none;
           filter: none;
 }
+svg.piece g.eyeShdw path {
+  opacity: 0.75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+  filter: alpha(opacity=75);
+}
 svg.piece g.hidden g.rings rect {
   fill: none;
   stroke: #fff;
   stroke-miterlimit: 10;
   stroke-width: 3px;
-  opacity: 0.25;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
-  filter: alpha(opacity=25);
-}
-svg.piece g.hidden g.rings rect:first-child {
   opacity: 0.15;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
   filter: alpha(opacity=15);
 }
+svg.piece g.hidden g.rings rect:first-child {
+  opacity: 0.1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+  filter: alpha(opacity=10);
+}
 svg.piece g.hidden g.rings rect:last-child {
-  opacity: 0.35;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
-  filter: alpha(opacity=35);
+  opacity: 0.25;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+  filter: alpha(opacity=25);
 }
 div.item.hasHidden svg.piece g.pieceType path {
   fill: rgba(255,255,255,0.1);

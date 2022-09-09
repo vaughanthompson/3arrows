@@ -113,7 +113,7 @@
     </header>
 
     <!-- start content -->
-    <main>
+    <main class="flexHeight">
 
     
         <div class="lobbyDiv">
@@ -238,42 +238,85 @@
 
 
 
-        <div class="lobbyDiv">
-
+        <div class="lobbyDiv gamesList">
             <div class="flexRow">
-                <h3>Playing (3)</h3>
-                <h3>Waiting (1)</h3>
-                <h3>Completed (12)</h3>
+                <a href="#" class="tabOne activeLink"><h3>Playing (3)</h3></a>
+                <a href="#" class="tabTwo"><h3>Waiting (1)</h3></a>
+                <a href="#" class="tabThree"><h3>Completed (12)</h3></a>
             </div>
+
+             <div class="gamesSummary tabDetailOne">
+               
+                <table class="list" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr class="minor">
+                            <th>GAME</th>
+                            <th>TYPE</th>
+                            <th>STATUS</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 1st row header link whole tr-->
+                        <tr class="gameDetailTrigger">
+                            <td>Razor <span class="minor">(123456)</span></td>
+                            <td>2P, 6X6</td>
+                            <td>Waiting for turn</td>
+                            <td><i class="icon-keyboard_arrow_down"></i></td>
+                        </tr>
+                        <!-- detail row-->
+                        <tr class="gameDetail">
+                            <td colspan="4">
+                                <div class="gameDetail">
+                                    <div>
+                                        <ol>
+                                            <li class="p1">p1Nick&nbsp;&nbsp;<span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span>&nbsp;&nbsp;<span class="minor">(123456)</span></li>
+                                            <li class="p2">p2Nick&nbsp;&nbsp;<span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span>&nbsp;&nbsp;<span class="minor">(123456)</span><span class="gameLeader inline"><img src="/images/icons/svg/crown.svg"></span></li>
+                                            <li class="p3 active">p3Nicklong&nbsp;&nbsp;<span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span>&nbsp;&nbsp;<span class="minor">(123456)</span></li>
+                                            <li class="p4">p4Nick&nbsp;&nbsp;<span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span>&nbsp;&nbsp;<span class="minor">(123456)</span></li>
+                                        </ol>
+                                    </div>
+                                    <div>
+                                        <span>Rated Game.<br>Started 14/8/22</span>
+                                        <span>
+                                            <a href="#" class="inline btn"><i class="icon icon-gear"></i></a>
+                                            &nbsp;
+                                            <a href="#" class="inline btn"><i class="icon icon-play_arrow"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Razor <span class="minor">(123456)</span></td>
+                            <td>2P, 6X6</td>
+                            <td>Waiting for turn</td>
+                            <td><a href="#" class="openDetail"><i class="icon-keyboard_arrow_down"></i></a></td>
+                        </tr>                      
+        
+        
+                    </tbody>
+                </table>
+
+            </div>
+
+            
             
         </div>
 
 
 
-        
-
-        <div class="gamesSummary">
-            <ul class="playerDash">
-                <li class="drawerItem">
-                    <div class="itemHeader">
-                        <div>
-                            <span class="username">Gamename</span>
-                            <span class="rating">(1293)</span>
-                        </div>
-                        <a href="#" class="openDetail"><i class="icon-keyboard_arrow_down"></i></a>
-                    </div>
-                    <div class="itemDetail active">
-                        game detail and cta
-                    </div> 
-                </li>
-                
-            </ul>
-        </div>
 
 
         
-        
 
+       
+
+        
+        
+        
         
         
 
