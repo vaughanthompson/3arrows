@@ -1030,6 +1030,15 @@ div.lobbyDiv div.flexRow {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+div.lobbyDiv div.flexRow a.tabLink {
+  border-bottom: 3px solid rgba(255,255,255,0);
+  margin-bottom: 1.5vw;
+  padding-left: 1.8vw;
+  padding-right: 1.8vw;
+}
+div.lobbyDiv div.flexRow a.tabLink.activeLink {
+  border-bottom: 3px solid #fff;
+}
 div.lobbyDiv.gamesList a {
   text-decoration: none;
 }
@@ -2112,7 +2121,8 @@ div.fixedHeightTable th {
   background-color: #000;
   vertical-align: bottom;
 }
-tr.player {
+tr.player,
+.player {
   color: #29abe2;
 }
 @media screen and (max-width: 750px) {
@@ -2127,7 +2137,7 @@ tr.player {
   }
   table.list tbody td {
     font-size: 0.8em;
-    padding: 1.5vw;
+    padding: 1.875vw 1.5vw;
   }
 }
 ul.lozengeFilter {
