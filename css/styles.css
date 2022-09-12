@@ -1037,8 +1037,8 @@ div.lobbyDiv div.flexRow > * {
   -webkit-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  -ms-flex: 1 1 50%;
+  flex: 1 1 50%;
 }
 div.lobbyDiv div.flexRow a.tabLink {
   border-bottom: 3px solid rgba(255,255,255,0);
@@ -2183,7 +2183,9 @@ ul.lozengeFilter li a.active {
     font-size: 0.7em;
   }
 }
-input.darkmode {
+input.darkmode,
+select.darkmode,
+select.darkmode option {
   background: none;
   width: 98.5%;
   font-size: 0.95em;
@@ -2196,6 +2198,110 @@ span.formFieldBorder {
   border-radius: 6px;
   padding: 0.8vw 1.5vw 0;
   margin-bottom: 1.5vw;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  border: none;
+  padding: 0.2em 2em 0.2em 0.8em;
+}
+.select-container {
+  position: relative;
+  display: block;
+}
+.select-container:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.select-container:after {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 0.8em;
+  right: 15px;
+  border-top: 8px solid #fff;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+select::-ms-expand {
+  display: none;
+}
+::-webkit-input-placeholder {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  -webkit-transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+::-moz-placeholder {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+:-ms-input-placeholder {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+::-ms-input-placeholder {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+::placeholder {
+  opacity: 1;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+*:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+*:focus::-moz-placeholder {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+*:focus:-ms-input-placeholder {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+*:focus::-ms-input-placeholder {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+*:focus::placeholder {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+input:focus,
+select:focus {
+  outline: none;
 }
 a:link,
 a:visited {

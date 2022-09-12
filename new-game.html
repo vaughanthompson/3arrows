@@ -110,6 +110,7 @@
     <!-- start content -->
     <main class="flexHeight">
 
+        <br>
     
         <div class="lobbyDiv">
             <h6>Game Name <span class="minor">(optional)</span> </h6>
@@ -131,9 +132,9 @@
 
             <h6>Players</h6>
             <div class="flexRow">
-                <a href="#" class="minorCTA">2</a>
-                <a href="#" class="minorCTA">3</a>
-                <a href="#" class="minorCTA">4</a>
+                <a href="#" class="minorCTA">Two</a>
+                <a href="#" class="minorCTA">Three</a>
+                <a href="#" class="minorCTA">Four</a>
             </div>
 
             <br>
@@ -141,26 +142,74 @@
             <div class="flexRow">
                 <div>
                     <h6>Board Size</h6>
-                    <select name="" id="">
-                        <option>ererbbre</option>
-                    </select>
+                    <span class="formFieldBorder">
+                        <div class="select-container">
+                            <select class="darkmode">
+                                <option value="">6x6</option>
+                                <option value="">7x7</option>
+                                <option value="">8x8</option>
+                            </select>
+                        </div>
+                    </span>
                 </div>
                 <div>
-                    <h6>Max. turn time</h6>
-                    <select name="" id="">
-                        <option>ererbbre</option>
-                    </select>
+                    <h6>Max. Turn Time</h6>
+                    <span class="formFieldBorder">
+                        <div class="select-container">
+                            <select class="darkmode">
+                                <option value="">15 min</option>
+                                <option value="">30 min</option>
+                                <option value="">45 min</option>
+                                <option value="">1 hr</option>
+                                <option value="">2 hr</option>
+                                <option value="">5 hr</option>
+                                <option value="">12 hr</option>
+                                <option value="">24 hr</option>
+                            </select>
+                        </div>
+                    </span>                 
                 </div>
             </div>
-
-          
 
         </div>  
 
 
-        
-        
 
+        <div class="lobbyDiv">
+            <h6>Invite-only Game Code <span class="minor">(optional)</span> </h6>
+            <span class="formFieldBorder">
+                <input type="text" class="darkmode" placeholder="Access Code">
+            </span>
+            <br>
+            
+            <br>        
+            <input type="checkbox" id="ratedGame" checked>&nbsp;
+            <label for="ratedGame">Rated Game</label><br>
+            <p class="minor">Allow this game to affect all player ratings?</p>
+
+            <br>        
+            <input type="checkbox" id="emailNotify" checked>&nbsp;
+            <label for="emailNotify">In-game Emails</label><br>
+            <p class="minor">Players receive email notifications when it's their turn.</p>
+
+            <br>        
+            <input type="checkbox" id="pgchat">&nbsp;
+            <label for="pgchat">PG Chat</label><br>
+            <p class="minor">Request clean chat from game participants</p>
+
+            <br>
+            <br>
+
+            <div class="flexRow">
+                <a href="#" class="ctaButton">Create</a>
+                <a href="#" class="ctaButtonSec">Cancel</a>
+            </div>
+
+            <br>
+            <br>
+
+        </div>  
+        
         
 
 
