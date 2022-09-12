@@ -1048,6 +1048,11 @@ div.lobbyDiv div.flexRow a.tabLink {
 div.lobbyDiv div.flexRow a.tabLink.activeLink {
   border-bottom: 3px solid #fff;
 }
+div.lobbyDiv div.flexRow a.minorCTA.activeLink,
+div.lobbyDiv div.flexRow a.minorCTA.activeLink:hover {
+  background-color: #fff;
+  color: #29abe2 !important;
+}
 div.lobbyDiv.gamesList a {
   text-decoration: none;
 }
