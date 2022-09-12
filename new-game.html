@@ -102,178 +102,69 @@
     <!-- end navigation -->
 
     <header class="lobby">
-        <p>Good morning</p><!-- morning / afternoon / evening -->
-        <h3 class="name">Carlin the Archer<span class="flag"><img src="/images/icons/flags/4x3/nz.svg"></span></h3>
-        <p class="minor">Ready to climb the leaderboard?</p>
-        <div class="gameCTAs">
-            <a href="#" class="ctaButton">New Game</a>
-            <a href="#" class="minorCTA">Auto Join</a>
-            <a href="#" class="minorCTA">Find a Game</a>
-        </div>
+        <br>
+        <h3>New Game</h3>
+        <br>
     </header>
 
     <!-- start content -->
-    <main>
+    <main class="flexHeight">
 
     
         <div class="lobbyDiv">
+            <h6>Game Name <span class="minor">(optional)</span> </h6>
+            <p class="minor">Help friends and foes alike find your game.</p>
+            <span class="formFieldBorder">
+                <input type="text" class="darkmode" placeholder="Enter Name (max. XX characters)">
+            </span>
+            
+            <br>
+
+            <h6>Game Type</h6>
+            <p class="minor">Select "Tactical" to play without dice actions or cover pieces.</p>
+            <div class="flexRow">
+                <a href="#" class="minorCTA">Standard</a>
+                <a href="#" class="minorCTA">Tactical</a>
+            </div>
+
+            <br>
+
+            <h6>Players</h6>
+            <div class="flexRow">
+                <a href="#" class="minorCTA">2</a>
+                <a href="#" class="minorCTA">3</a>
+                <a href="#" class="minorCTA">4</a>
+            </div>
+
+            <br>
 
             <div class="flexRow">
-                <h3><i class="icon-ranking"></i>&nbsp;&nbsp;Rankings</h3>
-                <ul class="lozengeFilter">
-                    <li><a href="#" class="active">Overall</a></li>
-                    <li><a href="#">2P</a></li>
-                    <li><a href="#">3P</a></li>
-                    <li><a href="#" >4P</a></li>
-                </ul>
+                <div>
+                    <h6>Board Size</h6>
+                    <select name="" id="">
+                        <option>ererbbre</option>
+                    </select>
+                </div>
+                <div>
+                    <h6>Max. turn time</h6>
+                    <select name="" id="">
+                        <option>ererbbre</option>
+                    </select>
+                </div>
             </div>
-            
-            
-            <!-- idea with the ranking is to move the table row of user to centre of the view.
-            the user can scroll within the div up and down using the overflow. -->
-            
-            <div class="fixedHeightTable">         
-                <table class="list" cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr class="minor">
-                            <th>POS.</th>
-                            <th>Name (Rating)</th>
-                            <th>W</th>
-                            <th>D</th>
-                            <th>L</th>
-                            <th><i class="icon-world"></i></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Razor <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span> </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>HadesBat <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span> </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Emilden <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span> </td>
-                        </tr>
-                        <tr class="player">
-                            <td>4</td>
-                            <td>Carlin the Archer <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span> </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Thompy <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span> </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Really Really long nickname person <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span> </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Newb2000 <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span> </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Sharpshooterz <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span> </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Dingo <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/au.svg"></span> </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>AssasinGurl <span class="minor">(123456)</span></td>
-                            <td>125</td>
-                            <td>45</td>
-                            <td>20</td>
-                            <td><span class="flag small"><img src="/images/icons/flags/4x3/nz.svg"></span> </td>
-                        </tr>
-    
-    
-                    </tbody>
-                </table>
-            </div>  
+
+          
 
         </div>  
 
 
-
-
-
-
-        <div class="lobbyDiv">
-
-            <div class="flexRow">
-                <h3>Playing (3)</h3>
-                <h3>Waiting (1)</h3>
-                <h3>Completed (12)</h3>
-            </div>
-            
-        </div>
-
-
-
-        
-
-        <div class="gamesSummary">
-            <ul class="playerDash">
-                <li class="drawerItem">
-                    <div class="itemHeader">
-                        <div>
-                            <span class="username">Gamename</span>
-                            <span class="rating">(1293)</span>
-                        </div>
-                        <a href="#" class="openDetail"><i class="icon-keyboard_arrow_down"></i></a>
-                    </div>
-                    <div class="itemDetail active">
-                        game detail and cta
-                    </div> 
-                </li>
-                
-            </ul>
-        </div>
-
-
         
         
 
+        
+
+
+        
         
         
 

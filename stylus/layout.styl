@@ -537,11 +537,13 @@ div.lobbyDiv
 div.lobbyDiv div.flexRow
     display: flex
     justify-content: space-between
+    column-gap: 10px
+div.lobbyDiv div.flexRow > *
+    flex: 1 1 auto
 div.lobbyDiv div.flexRow a.tabLink
     border-bottom: 3px solid rgba(255,255,255,0)
     margin-bottom: marXS
-    padding-left: padStd
-    padding-right: padStd
+    text-align: center
 div.lobbyDiv div.flexRow a.tabLink.activeLink
     border-bottom: 3px solid white
 

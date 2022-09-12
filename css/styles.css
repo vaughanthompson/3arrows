@@ -1029,12 +1029,21 @@ div.lobbyDiv div.flexRow {
   -o-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+}
+div.lobbyDiv div.flexRow > * {
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 div.lobbyDiv div.flexRow a.tabLink {
   border-bottom: 3px solid rgba(255,255,255,0);
   margin-bottom: 1.5vw;
-  padding-left: 1.8vw;
-  padding-right: 1.8vw;
+  text-align: center;
 }
 div.lobbyDiv div.flexRow a.tabLink.activeLink {
   border-bottom: 3px solid #fff;
@@ -1317,11 +1326,12 @@ input[type=submit] {
   display: inline-block;
   white-space: nowrap;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 140%;
   font-weight: 500;
   text-decoration: none !important;
   position: relative;
+  text-align: center;
 }
 input[type=submit] {
   margin-bottom: 0;
@@ -1378,7 +1388,7 @@ input[type=submit] .hasIcon i:before {
   a.ctaButtonPri,
   a.ctaButtonSec,
   input[type=submit] {
-    padding: 12px 15px 7px 15px;
+    padding: 12px 14px 7px 14px;
     border-radius: 6px;
   }
 }
@@ -2173,6 +2183,20 @@ ul.lozengeFilter li a.active {
     font-size: 0.7em;
   }
 }
+input.darkmode {
+  background: none;
+  width: 98.5%;
+  font-size: 0.95em;
+  line-height: 2em;
+  color: #fff;
+}
+span.formFieldBorder {
+  border: 1px solid #fff;
+  display: block;
+  border-radius: 6px;
+  padding: 0.8vw 1.5vw 0;
+  margin-bottom: 1.5vw;
+}
 a:link,
 a:visited {
   color: #fff;
@@ -2373,14 +2397,14 @@ h5 span,
 }
 h6,
 .h6 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.2em;
   line-height: 150%;
   letter-spacing: -0.015em;
 }
 h6 span,
 .h6 span {
-  font-weight: 600;
+  font-weight: 300;
 }
 p,
 a {
