@@ -373,7 +373,7 @@ p.quote::before
     line-height: 15px
 @media phoneRule
     p.figureCap
-        font-size: 0.8em
+        font-size: 0.9em
     p.quote::before
         left: -40px
         font-size: 60px
@@ -636,7 +636,6 @@ div.fixedHeightTable
     max-height: 30vh
     overflow: auto
 div.fixedHeightTable table
-    margin: 0
     padding-top: 0
 div.fixedHeightTable th
     padding-top: padXXS 
@@ -658,13 +657,14 @@ tr.player, .player
         padding-bottom: padXS
         border-bottom: 1px solid white
     table.list tbody td
-        font-size:0.8em
+        font-size:0.9em
         padding: padXS*1.25 padXS
 
 
 // lozenge filter
 ul.lozengeFilter
     padding: 0
+    text-align: right
 div.lobbyDiv ul.lozengeFilter
     margin: 0
 ul.lozengeFilter li
@@ -753,3 +753,8 @@ select::-ms-expand {
 input:focus 
 select:focus 
     outline: none
+
+@media sdtrigger
+    span.formFieldBorder
+        display: block
+        padding: padXXS*0.5 padXS 0

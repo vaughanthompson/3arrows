@@ -1042,7 +1042,6 @@ div.lobbyDiv div.flexRow > * {
 }
 div.lobbyDiv div.flexRow a.tabLink {
   border-bottom: 3px solid rgba(255,255,255,0);
-  margin-bottom: 1.5vw;
   text-align: center;
 }
 div.lobbyDiv div.flexRow a.tabLink.activeLink {
@@ -1727,7 +1726,7 @@ p.quote::before {
 }
 @media screen and (max-width: 750px) {
   p.figureCap {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
   p.quote::before {
     left: -40px;
@@ -2125,7 +2124,6 @@ div.fixedHeightTable {
   overflow: auto;
 }
 div.fixedHeightTable table {
-  margin: 0;
   padding-top: 0;
 }
 div.fixedHeightTable th {
@@ -2151,12 +2149,13 @@ tr.player,
     border-bottom: 1px solid #fff;
   }
   table.list tbody td {
-    font-size: 0.8em;
+    font-size: 0.9em;
     padding: 1.875vw 1.5vw;
   }
 }
 ul.lozengeFilter {
   padding: 0;
+  text-align: right;
 }
 div.lobbyDiv ul.lozengeFilter {
   margin: 0;
@@ -2308,6 +2307,12 @@ input:focus,
 select:focus {
   outline: none;
 }
+@media screen and (min-width: 1200px) {
+  span.formFieldBorder {
+    display: block;
+    padding: 0.4vw 1.5vw 0;
+  }
+}
 a:link,
 a:visited {
   color: #fff;
@@ -2412,7 +2417,7 @@ div#slideNav h6 {
 }
 div#secNav nav a {
   font-weight: 500;
-  font-size: 0.8em;
+  font-size: 0.9em;
   line-height: 100%;
   padding: 0;
 }
@@ -2531,7 +2536,7 @@ strong {
   font-size: 0.55em;
 }
 .minor {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 .good {
   color: #00b478;
@@ -4415,6 +4420,161 @@ div.p4.item.attackable.nonContrib svg.piece rect.border {
     -ms-filter: none;
     -webkit-filter: none;
             filter: none;
+  }
+}
+@media screen and (min-width: 750px) {
+  div.actionPanel {
+    position: fixed;
+    width: 95vw;
+    bottom: 2vh;
+    left: 2.5vw;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.25);
+    -webkit-box-shadow: 0 0 10px 0px #000;
+    box-shadow: 0 0 10px 0px #000;
+  }
+  div.actionPanel div.actionInfo div.actionMsg {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    font-size: 1em;
+  }
+  div.actionInner {
+    padding: 2vw 1vw 1vw 1vw;
+  }
+  div.actionPanel div.actionInfo,
+  div.actionPanel div.actions {
+    margin: 0;
+  }
+  div.actionPanel div.actionInfo {
+    margin-bottom: 1vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main.flexHeight {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-column-gap: 3vw;
+    -moz-column-gap: 3vw;
+    column-gap: 3vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    min-height: 75vh;
+  }
+  div.actionPanel div.actionInner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-column-gap: 4vw;
+    -moz-column-gap: 4vw;
+    column-gap: 4vw;
+  }
+  div.overlayContent {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  header.lobby {
+    padding: 3vw 3vw 1.5vw 3vw;
+  }
+  div.lobbyDiv {
+    -webkit-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -ms-flex: 1 1 40%;
+    flex: 1 1 40%;
+    padding: 3vw 1.5vw;
+  }
+  div.lobbyDiv.gamesList tr.gameDetail li.active:before {
+    left: 5px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  div.lobbyDiv.gamesList tr.gameDetail td {
+    background-color: rgba(255,255,255,0.05);
+    padding: 0.8vw;
+  }
+  div.gameDetail > div:last-child > span:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -o-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  div.lobbyDiv div.flexRow > * {
+    -webkit-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  div.lobbyDiv div.flexRow h3 {
+    font-size: 1.2em;
+  }
+  div.fixedHeightTable {
+    max-height: 50vh;
+  }
+  #navHeader div#mblNavControl {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    padding-right: 1.5vw;
+  }
+  #navHeader div#mblNavControl > * {
+    margin-right: 0.8vw;
+  }
+  div.containMNav nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 0 3vw;
+    -webkit-column-gap: 2vw;
+    -moz-column-gap: 2vw;
+    column-gap: 2vw;
+    row-gap: 2vw;
+    margin-top: 2vw;
+  }
+  div.containMNav nav a {
+    -webkit-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -ms-flex: 1 1 40%;
+    flex: 1 1 40%;
+    padding: 1.5vw 1.8vw;
+    line-height: 130%;
+    margin: 0;
+    border-radius: 4px;
+  }
+  div.containMNav div.minorLinks,
+  div.containMNav div.social {
+    margin: 3vw 0 3vw 0;
   }
 }
 /* effects */

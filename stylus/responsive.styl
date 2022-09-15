@@ -1,0 +1,101 @@
+
+
+
+@media ttrigger
+    /* actionPanel */
+    div.actionPanel
+        position: fixed
+        width: 95vw
+        bottom: 2vh
+        left:2.5vw
+        border-radius:15px
+        border 1px solid whiteAlp25
+        box-shadow: 0 0 10px 0px black
+    div.actionPanel div.actionInfo div.actionMsg
+        flex-basis: auto
+        font-size: 1em
+    div.actionInner
+        padding: 2vw 1vw 1vw 1vw
+    div.actionPanel div.actionInfo,
+    div.actionPanel div.actions
+        margin: 0
+    div.actionPanel div.actionInfo
+        margin-bottom: 1vw
+
+
+
+@media sdtrigger
+    main.flexHeight 
+        display: flex
+        justify-content: center
+        column-gap: 3vw
+        padding-left: padM
+        padding-right: padM
+        min-height: 75vh
+
+    div.actionPanel div.actionInner
+        display: flex
+        justify-content: center
+        column-gap: 4vw
+    
+    /* overlayBoard */
+    div.overlayContent
+        flex-basis: 50%
+
+    /* lobby */
+    header.lobby
+        padding: padM padM padXS padM
+
+    div.lobbyDiv
+        flex: 1 1 40%
+        padding: padM padXS
+    div.lobbyDiv.gamesList
+        tr.gameDetail li.active:before
+            left: 5px
+            font-size:20px
+            line-height: 20px
+    div.lobbyDiv.gamesList
+        tr.gameDetail td
+            background-color: whiteAlp05
+            padding: padXXS
+    div.gameDetail > div:last-child > span:last-child
+        display: flex
+        flex-direction: column
+        align-items: center
+    div.lobbyDiv div.flexRow > *
+        flex: 1 1 auto
+    div.lobbyDiv div.flexRow h3
+        font-size: 1.2em
+
+    div.fixedHeightTable
+        max-height: 50vh
+
+        
+    // mobile nav
+    #navHeader div#mblNavControl
+        display: flex 
+        padding-right: padXS
+    #navHeader div#mblNavControl > *
+        margin-right: marXXS       
+    div.containMNav nav
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        margin:  0 0 marM
+        column-gap: 2vw
+        row-gap: 2vw
+        margin-top: 2vw
+    div.containMNav nav a
+        flex: 1 1 40%
+        padding: padXS padStd 
+        line-height: 130%
+        margin: 0
+        border-radius: 4px
+    div.containMNav div.minorLinks, 
+    div.containMNav div.social 
+        margin: marM 0 marM 0
+
+
+
+
+    
