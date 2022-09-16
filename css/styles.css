@@ -2194,6 +2194,10 @@ select.darkmode {
   font-size: 0.95em;
   line-height: 2em;
   color: #fff;
+  border: none;
+}
+select.darkmode option {
+  color: #000;
 }
 span.formFieldBorder {
   border: 1px solid #fff;
