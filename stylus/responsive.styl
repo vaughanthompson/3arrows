@@ -98,17 +98,54 @@
 
     // gameboard
     main.gameBoardMain
-        display: flex
-        {test}
-    main.gameBoardMain div.opponentDrawer
-        order: 2
-        {test}
+        padding-top:5vh
+        padding-bottom: 20vh !important
+        min-height: 70vh
+        display: grid
+        align-items: start
+        grid-gap:2vw
+        grid-template-columns: auto minmax(auto, 1fr);
+
+    main.gameBoardMain > *
+        padding: 1vw;
     main.gameBoardMain div.boardContain
+        grid-column: 1
+        grid-row: 1 / span 2
         order: 1
-        {test}
-    main.gameBoardMain div.playerDrawer
+        background-color: whiteAlp05
+        border-radius: 1em
+        //justify-self: start
+
+    main.gameBoardMain div.opponentDrawer
+        grid-column: 2
         order: 3
-        {test}
+        align-self: end
+        background-color: whiteAlp10
+        border-radius: 1em
+
+    main.gameBoardMain div.playerDrawer
+        grid-column: 2
+        order: 2
+        background-color: whiteAlp10
+        border-radius: 1em
+
+    div.gameboard div.container
+        height: 65vh
+        width: 65vh
+    div.gameboard div.dashContain
+        width: 65vh
 
 
-    
+
+
+@media smallDesktop
+    main.gameBoardMain div.playerDrawer ul.playerDash div.itemHeader span.username
+        font-size: 110%
+@media sdtrigger
+    main.gameBoardMain div.playerDrawer ul.playerDash div.itemHeader span.username
+        font-size: 115%
+        font-weight: 600
+
+@media mtrigger
+    div.opponentDrawer.turnInProgress
+        display: none
